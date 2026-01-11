@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #000000; /* black */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #000000; /* black */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #000000; /* black */
+    
+    /* Border & Input */
+    --color-border: #E3F2FD; /* light blue-50 */
+    --color-input: #E3F2FD; /* light blue-50 */
+    --color-ring: #FDD835; /* yellow-600 */
+    
+    /* Muted */
+    --color-muted: #E3F2FD; /* light blue-50 */
+    --color-muted-foreground: #424242; /* gray-800 */
+    
+    /* Primary - Construction Blue */
+    --color-primary: #1976D2; /* blue-700 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary - Professional Black */
+    --color-secondary: #212121; /* black-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent - Construction Yellow */
+    --color-accent: #FDD835; /* yellow-600 */
+    --color-accent-foreground: #000000; /* black */
+    
+    /* Destructive/Error */
+    --color-destructive: #D32F2F; /* red-700 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-error: #D32F2F; /* red-700 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Success */
+    --color-success: #388E3C; /* green-700 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning */
+    --color-warning: #FBC02D; /* yellow-700 */
+    --color-warning-foreground: #000000; /* black */
+    
+    /* Additional Brand Colors */
+    --color-conversion: #1565C0; /* blue-800 */
+    --color-conversion-foreground: #FFFFFF; /* white */
+    
+    /* Spacing */
+    --spacing-base: 8px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 25px rgba(25, 118, 210, 0.3);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  button {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-ease-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
