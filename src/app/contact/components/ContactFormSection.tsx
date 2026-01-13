@@ -21,6 +21,9 @@ interface FormErrors {
 }
 
 const ContactFormSection = () => {
+  // 1) PUT YOUR FORMSPREE ENDPOINT HERE:
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqqznry';
+
   const [isHydrated, setIsHydrated] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -34,6 +37,7 @@ const ContactFormSection = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -76,37 +80,86 @@ const ContactFormSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
+    setSubmitSuccess(false);
 
-    if (!validateForm()) {
+    if (!validateForm()) return;
+
+    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('xpqqznry')) {
+      setSubmitError('Липсва Formspree endpoint. Добавете го в кода (FORMSPREE_ENDPOINT).');
       return;
     }
 
     setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: formData.service,
+          priority: formData.priority,
+          message: formData.message,
+          source: typeof window !== 'undefined' ? window.location.href : 'unknown'
+        })
+      });
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: '',
-      urgency: 'normal',
-      priority: 'normal'
-    });
+      // Formspree usually returns JSON; but we guard just in case
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
 
-    setTimeout(() => {
-      setSubmitSuccess(false);
-    }, 5000);
+      if (!res.ok) {
+        const msg =
+          data?.errors?.[0]?.message ||
+          data?.error ||
+          'Неуспешно изпращане. Моля, опитайте отново.';
+        setSubmitError(msg);
+        return;
+      }
+
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+        urgency: 'normal',
+        priority: 'normal'
+      });
+
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
+    } catch (err) {
+      console.error(err);
+      setSubmitError('Проблем с връзката. Моля, опитайте отново.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+
     setFormData(prev => ({ ...prev, [name]: value }));
+
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+
+    if (submitError) {
+      setSubmitError(null);
     }
   };
 
@@ -161,6 +214,20 @@ const ContactFormSection = () => {
               </div>
             )}
 
+            {submitError && (
+              <div className="mb-6 p-4 bg-destructive/10 border-2 border-destructive rounded-lg flex items-start space-x-3">
+                <Icon name="ExclamationTriangleIcon" size={24} className="text-destructive flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-heading font-bold text-destructive mb-1">
+                    Неуспешно изпращане
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {submitError}
+                  </p>
+                </div>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -188,7 +255,7 @@ const ContactFormSection = () => {
                     Телефон *
                   </label>
                   <input
-                    type="text"
+                    type="tel"
                     inputMode="tel"
                     autoComplete="tel"
                     id="phone"
