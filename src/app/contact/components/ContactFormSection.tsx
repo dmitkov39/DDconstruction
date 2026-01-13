@@ -189,8 +189,8 @@ const ContactFormSection = () => {
                   </label>
                   <input
                     type="text"
-                     inputMode="tel"
-                     autoComplete="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
