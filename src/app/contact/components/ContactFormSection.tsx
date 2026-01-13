@@ -188,7 +188,9 @@ const ContactFormSection = () => {
                     Телефон *
                   </label>
                   <input
-                    type="tel"
+                    type="text"
+                     inputMode="tel"
+                     autoComplete="tel"
                     id="phone"
                     name="phone"
                     value={formData.phone}
