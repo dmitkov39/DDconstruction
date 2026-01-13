@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || '';
+
 
 interface FormData {
   name: string;
@@ -79,68 +81,58 @@ const ContactFormSection = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitError(null);
-    setSubmitSuccess(false);
+  e.preventDefault();
 
-    if (!validateForm()) return;
+  if (!validateForm()) return;
 
-    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('https://formspree.io/f/xpqqznry')) {
-      setSubmitError('Липсва Formspree endpoint. Добавете го в кода (FORMSPREE_ENDPOINT).');
-      return;
+  if (!FORMSPREE_ENDPOINT) {
+    setErrors({ message: 'Липсва Formspree endpoint' });
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        urgency: formData.urgency,
+        priority: formData.priority
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Formspree error');
     }
 
-    setIsSubmitting(true);
+    setSubmitSuccess(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: '',
+      urgency: 'normal',
+      priority: 'normal'
+    });
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          service: formData.service,
-          priority: formData.priority,
-          message: formData.message,
-          source: typeof window !== 'undefined' ? window.location.href : 'unknown'
-        })
-      });
+    setTimeout(() => setSubmitSuccess(false), 5000);
+  } catch (error) {
+    setErrors({ message: 'Грешка при изпращане. Опитайте отново.' });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
-      // Formspree usually returns JSON; but we guard just in case
-      let data: any = null;
-      try {
-        data = await res.json();
-      } catch {
-        data = null;
-      }
-
-      if (!res.ok) {
-        const msg =
-          data?.errors?.[0]?.message ||
-          data?.error ||
-          'Неуспешно изпращане. Моля, опитайте отново.';
-        setSubmitError(msg);
-        return;
-      }
-
-      setSubmitSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-        urgency: 'normal',
-        priority: 'normal'
-      });
-
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
     } catch (err) {
       console.error(err);
       setSubmitError('Проблем с връзката. Моля, опитайте отново.');
