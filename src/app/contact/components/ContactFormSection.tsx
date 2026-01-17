@@ -90,8 +90,6 @@ const ContactFormSection = () => {
   return;
 }
 
-    }
-
     setIsSubmitting(true);
 
     try {
