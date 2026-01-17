@@ -85,9 +85,11 @@ const ContactFormSection = () => {
 
     if (!validateForm()) return;
 
-    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes('xpqqznry')) {
-      setSubmitError('Липсва Formspree endpoint. Добавете го в кода (FORMSPREE_ENDPOINT).');
-      return;
+    if (!FORMSPREE_ENDPOINT) {
+  setSubmitError('Липсва Formspree endpoint. Добавете го в кода (FORMSPREE_ENDPOINT).');
+  return;
+}
+
     }
 
     setIsSubmitting(true);
