@@ -69,12 +69,12 @@ export default function Homepage() {
     description:
       'Изкопни услуги с мини багер, заравняване на терени, почистване на обекти и транспорт на материали.',
     // Ако имаш телефон/имейл и адрес – добави ги тук за още по-силен локален SEO:
-    / telephone: '+359 878 827 128/+359 885 078 098',
-    / email: 'ddconstruction988@gmail.com',
+    // telephone: '+359 878 827 128/+359 885 078 098',
+    // email: 'ddconstruction988@gmail.com',
     // address: {
     //   '@type': 'PostalAddress',
-    /   addressCountry: 'BG',
-    /   addressLocality: 'Sofia',
+    //   addressCountry: 'BG',
+    //   addressLocality: 'Sofia',
     // },
     serviceType: [
       'Изкопни дейности',
