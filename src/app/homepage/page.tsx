@@ -12,9 +12,6 @@ import TrustIndicators from './components/TrustIndicators';
 import TestimonialsCarousel from './components/TestimonialsCarousel';
 import Footer from './components/Footer';
 
-const SITE_URL = 'https://www.ddconstructiongp.com';
-const BRAND_NAME = 'D&D Construction';
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ddconstructiongp.com'),
   title: `Изкопни услуги с мини багер | Заравняване и почистване – ${BRAND_NAME}`,
