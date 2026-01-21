@@ -1,3 +1,6 @@
+const BRAND_NAME = 'D&D Construction';
+const SITE_URL = 'https://www.ddconstructiongp.com';
+
 import type { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -13,6 +16,7 @@ const SITE_URL = 'https://www.ddconstructiongp.com';
 const BRAND_NAME = 'D&D Construction';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ddconstructiongp.com'),
   title: `Изкопни услуги с мини багер | Заравняване и почистване – ${BRAND_NAME}`,
   description:
     'Изкопни услуги с мини багер: заравняване на терени, почистване на обекти и транспорт на материали. Бързо изпълнение, коректни цени и професионален екип. Запитване онлайн.',
