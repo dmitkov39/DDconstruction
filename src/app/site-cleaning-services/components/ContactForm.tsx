@@ -13,6 +13,7 @@ interface FormData {
 }
 
 const ContactForm = () => {
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqqznry';
   const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || '';
 
   const [isHydrated, setIsHydrated] = useState(false);
@@ -47,69 +48,46 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus('idle');
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus('idle');
 
-    if (!FORMSPREE_ENDPOINT) {
-      console.error('Missing NEXT_PUBLIC_FORMSPREE_ENDPOINT');
+  const endpoint =
+    process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xpqqznry';
+
+  try {
+    const fd = new FormData();
+    fd.append('name', formData.name);
+    fd.append('phone', formData.phone);
+    fd.append('email', formData.email);
+    fd.append('serviceType', formData.serviceType);
+    fd.append('area', formData.area);
+    fd.append('message', formData.message);
+    fd.append('page', typeof window !== 'undefined' ? window.location.href : 'unknown');
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: fd,
+    });
+
+    const data = await res.json().catch(() => null);
+
+    if (!res.ok) {
+      console.error('Formspree error:', data);
       setSubmitStatus('error');
-      setIsSubmitting(false);
       return;
     }
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          serviceType: formData.serviceType,
-          area: formData.area,
-          message: formData.message,
-          source: typeof window !== 'undefined' ? window.location.href : 'unknown',
-        }),
-      });
-
-      let data: any = null;
-      try {
-        data = await res.json();
-      } catch {
-        data = null;
-      }
-
-      if (!res.ok) {
-        console.error('Formspree error:', data);
-        setSubmitStatus('error');
-        setIsSubmitting(false);
-        return;
-      }
-
-      setSubmitStatus('success');
-      setIsSubmitting(false);
-
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        serviceType: '',
-        area: '',
-        message: '',
-      });
-
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
-    } catch (err) {
-      console.error(err);
-      setSubmitStatus('error');
-      setIsSubmitting(false);
-    }
+    setSubmitStatus('success');
+    setFormData({ name: '', phone: '', email: '', serviceType: '', area: '', message: '' });
+    setTimeout(() => setSubmitStatus('idle'), 5000);
+  } catch (err) {
+    console.error(err);
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
   };
 
   if (!isHydrated) {
