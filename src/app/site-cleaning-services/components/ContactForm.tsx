@@ -15,8 +15,6 @@ interface FormData {
   message: string;
 }
 
-}
-
 const ContactForm = () => {
   const [isHydrated, setIsHydrated] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -27,6 +25,10 @@ const ContactForm = () => {
     area: '',
     message: '',
   });
+
+  // ...
+};
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
