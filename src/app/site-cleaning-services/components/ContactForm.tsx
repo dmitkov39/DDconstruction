@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
 
+const FORMSPREE_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xpqqznry';
+
 interface FormData {
   name: string;
   phone: string;
@@ -12,10 +15,9 @@ interface FormData {
   message: string;
 }
 
-const ContactForm = () => {
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqqznry';
-  const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || '';
+}
 
+const ContactForm = () => {
   const [isHydrated, setIsHydrated] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
