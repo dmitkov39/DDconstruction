@@ -11,7 +11,6 @@ export default function LandLevelingServicesPage() {
   return (
     <>
       <Header />
-      <LandLevelingInteractive />
     </>
   );
 }
