@@ -246,7 +246,7 @@ const ContactForm = () => {
 
                 <div className="space-y-6 mb-8">
                   <a
-                    href="tel:+359123456789"
+                    href="tel:+359878827128"
                     className="flex items-start space-x-4 group"
                   >
                     <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
@@ -257,7 +257,7 @@ const ContactForm = () => {
                         Телефон
                       </p>
                       <p className="text-base text-primary font-bold">
-                        +359 123 456 789
+                        +359 878 827 128
                       </p>
                     </div>
                   </a>
