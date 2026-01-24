@@ -91,7 +91,6 @@ const ContactForm = () => {
     setSubmitStatus('error');
   } finally {
     setIsSubmitting(false);
-  }
   };
 
   if (!isHydrated) {
