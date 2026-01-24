@@ -13,6 +13,8 @@ interface FormData {
 }
 
 const ContactForm = () => {
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqqznry';
+
   const [isHydrated, setIsHydrated] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -42,28 +44,54 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setSubmitStatus('success');
-    setIsSubmitting(false);
-    
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      serviceType: '',
-      area: '',
-      message: ''
-    });
+    setSubmitStatus('idle');
 
-    setTimeout(() => {
-      setSubmitStatus('idle');
-    }, 5000);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          serviceType: formData.serviceType,
+          area: formData.area,
+          message: formData.message,
+          source: typeof window !== 'undefined' ? window.location.href : 'unknown',
+        }),
+      });
+
+      if (!res.ok) {
+        setSubmitStatus('error');
+        setIsSubmitting(false);
+        return;
+      }
+
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        serviceType: '',
+        area: '',
+        message: '',
+      });
+
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (err) {
+      console.error(err);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
 
   if (!isHydrated) {
     return (
@@ -115,7 +143,20 @@ const ContactForm = () => {
                     </button>
                   </div>
                 ) : (
+                  <>
+                    {submitStatus === 'error' && (
+                      <div className="mb-6 p-4 bg-destructive/10 border-2 border-destructive rounded-lg">
+                        <p className="font-heading font-bold text-destructive mb-1">Неуспешно изпращане</p>
+                        <p className="text-sm text-muted-foreground">
+                          Не успяхме да изпратим формата. Моля, опитайте отново или се обадете директно.
+                        </p>
+                      </div>
+                    )} 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                      ...
+                    </form>
+                  </>
+                    )
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-heading font-semibold text-foreground mb-2">
@@ -263,7 +304,7 @@ const ContactForm = () => {
                   </a>
 
                   <a
-                    href="mailto:info@ddconstruction.bg"
+                    href="mailto:ddconstruction988@gmail.com"
                     className="flex items-start space-x-4 group"
                   >
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors duration-300">
@@ -274,7 +315,7 @@ const ContactForm = () => {
                         Имейл
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        info@ddconstruction.bg
+                        ddconstruction988@gmail.com
                       </p>
                     </div>
                   </a>
