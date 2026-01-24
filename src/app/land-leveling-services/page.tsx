@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 export default function LandLevelingServicesPage() {
   return (
     <>
-      <Header />
-    </>
+  <Header />
+  <SiteCleaningInteractive />
+</>
+
   );
 }
