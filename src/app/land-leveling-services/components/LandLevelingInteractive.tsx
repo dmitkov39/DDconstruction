@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import HeroSection from './HeroSection';
 import SeasonalGuide from './SeasonalGuide';
-import ContactForm from './ContactForm';
 import Footer from './Footer';
 
 const LandLevelingInteractive = () => {
@@ -12,13 +11,6 @@ const LandLevelingInteractive = () => {
   useEffect(() => {
     setIsHydrated(true);
   }, []);
-
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact-form');
-    if (contactSection) {
-      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   if (!isHydrated) {
     return (
@@ -38,11 +30,8 @@ const LandLevelingInteractive = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection onContactClick={scrollToContact} />
+      <HeroSection />
       <SeasonalGuide />
-      <div id="contact-form">
-        <ContactForm />
-      </div>
       <Footer />
     </div>
   );
