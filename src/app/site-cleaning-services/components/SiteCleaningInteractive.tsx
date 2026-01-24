@@ -4,7 +4,6 @@ import React, { useRef } from 'react';
 import HeroSection from './HeroSection';
 import ServicesOverview from './ServicesOverview';
 import PricingTimeline from './PricingTimeline';
-import ContactForm from './ContactForm';
 
 const SiteCleaningInteractive = () => {
   const contactFormRef = useRef<HTMLDivElement>(null);
