@@ -104,7 +104,7 @@ const Header = ({ className = '' }: HeaderProps) => {
                     </button>
                     {isServicesOpen && (
                       <div
-                        className="absolute top-full left-0 mt-1 w-56 bg-card shadow-md rounded-md py-2 animate-fade-in"
+                        className="absolute top-full left-0 mt-0 w-56 bg-card shadow-md rounded-md py-2 animate-fade-in"
                       >
                         {serviceItems.map((service) => (
                           <Link
