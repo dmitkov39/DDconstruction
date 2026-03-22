@@ -181,15 +181,15 @@ const PortfolioInteractive = () => {
     category: 'къртене,износване и изкоп',
     beforeImage: "/assets/images/beton 4.jpg",
     beforeAlt: 'Takeuchi TB016 кърти бетон',
-    afterImage: "/assets/images/beton2.jpg",
+    afterImage: "/assets/images/Beton2.jpg",
     afterAlt: 'Takeuchi TB016 премахва бетона от изкъртената ивица',
     additionalImages:[
       {
-        image: "/assets/images/beton 1.jpg",
+        image: "/assets/images/Beton 1.jpg",
         alt: 'Takeuchi TB016 Вдигнат с кран'
       },
       {
-         image: "/assets/images/beton 3.jpg",
+         image: "/assets/images/Beton 3.jpg",
         alt: 'POV от кабината на Takeuchi TB016'
       }
     ],
