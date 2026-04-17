@@ -26,42 +26,65 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
 
   return (
     <div className="bg-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div className="relative h-72 overflow-hidden group">
-        <div className="relative w-full h-full">
-          <AppImage
-            src={showAfter ? project.afterImage : project.beforeImage}
-            alt={showAfter ? project.afterAlt : project.beforeAlt}
-            className="w-full h-full object-contain bg-gray-100 transition-opacity duration-500"
-          />
-        </div>
-        
-        <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-bold">
+      {/* Image with Before/After toggle */}
+      <div className="relative h-56 overflow-hidden group">
+        <AppImage
+          src={showAfter ? project.afterImage : project.beforeImage}
+          alt={showAfter ? project.afterAlt : project.beforeAlt}
+          className="w-full h-full object-cover transition-opacity duration-500"
+        />
+
+        {/* Category badge */}
+        <div className="absolute top-3 left-3 bg-primary text-primary-foreground px-3 py-1 rounded-md text-xs font-bold shadow">
           {project.category}
+        </div>
+
+        {/* Before/After toggle */}
+        <div className="absolute bottom-3 right-3 flex items-center bg-black/60 backdrop-blur-sm rounded-full p-1 gap-1">
+          <button
+            onClick={() => setShowAfter(false)}
+            className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-200 ${
+              !showAfter
+                ? 'bg-white text-black'
+                : 'text-white/70 hover:text-white'
+            }`}
+          >
+            Преди
+          </button>
+          <button
+            onClick={() => setShowAfter(true)}
+            className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-200 ${
+              showAfter
+                ? 'bg-primary text-primary-foreground'
+                : 'text-white/70 hover:text-white'
+            }`}
+          >
+            След
+          </button>
         </div>
       </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-heading font-bold text-foreground mb-2">
+      {/* Content */}
+      <div className="p-5">
+        <h3 className="text-lg font-heading font-bold text-foreground mb-2 line-clamp-2">
           {project.title}
         </h3>
-        
+
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
           {project.description}
         </p>
 
-        <div className="space-y-2 mb-4">
+        <div className="space-y-1.5 mb-4">
           <div className="flex items-center space-x-2 text-sm">
-            <Icon name="MapPinIcon" size={16} className="text-accent" />
+            <Icon name="MapPinIcon" size={14} className="text-accent flex-shrink-0" />
             <span className="text-foreground">{project.location}</span>
           </div>
-          
           <div className="flex items-center space-x-2 text-sm">
-            <Icon name="ClockIcon" size={16} className="text-accent" />
+            <Icon name="ClockIcon" size={14} className="text-accent flex-shrink-0" />
             <span className="text-foreground">{project.duration}</span>
           </div>
-          
           <div className="flex items-center space-x-2 text-sm">
-            <Icon name="CalendarIcon" size={16} className="text-accent" />
+            <Icon name="CalendarIcon" size={14} className="text-accent flex-shrink-0" />
             <span className="text-foreground">{project.completionDate}</span>
           </div>
         </div>
