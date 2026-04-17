@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
@@ -28,13 +28,15 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const [activeImage, setActiveImage] = useState<'before' | 'after'>('after');
+
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden';
+      setActiveImage('after');
     } else {
       document.body.style.overflow = 'unset';
     }
-
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -42,16 +44,30 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
   if (!project) return null;
 
+  const mainImage =
+    activeImage === 'after'
+      ? { src: project.afterImage, alt: project.afterAlt }
+      : { src: project.beforeImage, alt: project.beforeAlt };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fade-in">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fade-in"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
       <div className="bg-card rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        {/* Header */}
         <div className="sticky top-0 bg-card border-b border-border p-4 flex items-center justify-between z-10">
-          <h2 className="text-2xl font-heading font-bold text-foreground">
-            {project.title}
-          </h2>
+          <div>
+            <span className="text-xs font-bold text-primary uppercase tracking-wider">
+              {project.category}
+            </span>
+            <h2 className="text-xl font-heading font-bold text-foreground leading-tight">
+              {project.title}
+            </h2>
+          </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-muted rounded-md transition-colors duration-200"
+            className="p-2 hover:bg-muted rounded-md transition-colors duration-200 flex-shrink-0"
             aria-label="Затвори"
           >
             <Icon name="XMarkIcon" size={24} className="text-foreground" />
@@ -59,35 +75,90 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         </div>
 
         <div className="p-6 space-y-6">
-          <div className="grid grid-cols-1 gap-4">
-            <div>
-              <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted">
+          {/* Main image with Before/After toggle */}
+          <div>
+            <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted">
+              <AppImage
+                src={mainImage.src}
+                alt={mainImage.alt}
+                className="w-full h-full object-cover transition-opacity duration-300"
+              />
+
+              {/* Before/After toggle overlay */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center bg-black/60 backdrop-blur-sm rounded-full p-1 gap-1">
+                <button
+                  onClick={() => setActiveImage('before')}
+                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-200 ${
+                    activeImage === 'before'
+                      ? 'bg-white text-black'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  Преди
+                </button>
+                <button
+                  onClick={() => setActiveImage('after')}
+                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-200 ${
+                    activeImage === 'after'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  След
+                </button>
+              </div>
+            </div>
+
+            {/* Thumbnail strip */}
+            <div className="flex gap-2 mt-2">
+              <button
+                onClick={() => setActiveImage('before')}
+                className={`relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all ${
+                  activeImage === 'before' ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
+              >
+                <AppImage
+                  src={project.beforeImage}
+                  alt={project.beforeAlt}
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] font-bold bg-black/50 text-white py-0.5">
+                  Преди
+                </span>
+              </button>
+
+              <button
+                onClick={() => setActiveImage('after')}
+                className={`relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all ${
+                  activeImage === 'after' ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
+                }`}
+              >
                 <AppImage
                   src={project.afterImage}
                   alt={project.afterAlt}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
-              </div>
+                <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] font-bold bg-black/50 text-white py-0.5">
+                  След
+                </span>
+              </button>
+
+              {project.additionalImages?.map((img, index) => (
+                <div
+                  key={index}
+                  className="relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 border-transparent opacity-80"
+                >
+                  <AppImage
+                    src={img.image}
+                    alt={img.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
-          {project.additionalImages && project.additionalImages.length > 0 && (
-            <div>
-              <h3 className="text-sm font-semibold text-muted-foreground mb-2">ДОПЪЛНИТЕЛНИ СНИМКИ ОТ ПРОЕКТА</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.additionalImages.map((img, index) => (
-                  <div key={index} className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted">
-                    <AppImage
-                      src={img.image}
-                      alt={img.alt}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
+          {/* Stats row */}
           <div className="bg-muted rounded-lg p-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div>
@@ -97,7 +168,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
                 <p className="text-sm font-semibold text-foreground">{project.location}</p>
               </div>
-              
               <div>
                 <div className="flex items-center space-x-2 mb-1">
                   <Icon name="ClockIcon" size={16} className="text-accent" />
@@ -105,7 +175,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
                 <p className="text-sm font-semibold text-foreground">{project.duration}</p>
               </div>
-              
               <div>
                 <div className="flex items-center space-x-2 mb-1">
                   <Icon name="CalendarIcon" size={16} className="text-accent" />
@@ -113,7 +182,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
                 <p className="text-sm font-semibold text-foreground">{project.completionDate}</p>
               </div>
-              
               <div>
                 <div className="flex items-center space-x-2 mb-1">
                   <Icon name="UserGroupIcon" size={16} className="text-accent" />
@@ -124,6 +192,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
+          {/* Description */}
           <div>
             <h3 className="text-lg font-heading font-bold text-foreground mb-2">
               Описание на проекта
@@ -131,6 +200,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             <p className="text-foreground leading-relaxed">{project.description}</p>
           </div>
 
+          {/* Challenge & Solution */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-lg font-heading font-bold text-foreground mb-2 flex items-center space-x-2">
@@ -139,7 +209,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </h3>
               <p className="text-foreground leading-relaxed">{project.challenge}</p>
             </div>
-            
             <div>
               <h3 className="text-lg font-heading font-bold text-foreground mb-2 flex items-center space-x-2">
                 <Icon name="CheckCircleIcon" size={20} className="text-success" />
@@ -149,6 +218,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
+          {/* Equipment */}
           <div>
             <h3 className="text-lg font-heading font-bold text-foreground mb-3 flex items-center space-x-2">
               <Icon name="WrenchScrewdriverIcon" size={20} className="text-accent" />
@@ -166,6 +236,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           </div>
 
+          {/* Client testimonial */}
           {project.clientTestimonial && (
             <div className="bg-primary bg-opacity-10 border-l-4 border-primary rounded-lg p-4">
               <div className="flex items-start space-x-3">
@@ -182,6 +253,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
           )}
 
+          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <a
               href="tel:+359878827128"
@@ -190,7 +262,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               <Icon name="PhoneIcon" size={20} />
               <span>Обади се сега</span>
             </a>
-            
             <a
               href="/quick-quote"
               className="flex-1 flex items-center justify-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-cta font-bold hover:bg-opacity-90 transition-all duration-300"
