@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
@@ -28,12 +28,9 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
-  const [activeImage, setActiveImage] = useState<'before' | 'after'>('after');
-
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden';
-      setActiveImage('after');
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -44,10 +41,11 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
   if (!project) return null;
 
-  const mainImage =
-    activeImage === 'after'
-      ? { src: project.afterImage, alt: project.afterAlt }
-      : { src: project.beforeImage, alt: project.beforeAlt };
+  const allImages = [
+    { src: project.afterImage, alt: project.afterAlt },
+    { src: project.beforeImage, alt: project.beforeAlt },
+    ...(project.additionalImages?.map((img) => ({ src: img.image, alt: img.alt })) ?? []),
+  ];
 
   return (
     <div
@@ -75,87 +73,33 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         </div>
 
         <div className="p-6 space-y-6">
-          {/* Main image with Before/After toggle */}
+          {/* Main image */}
           <div>
             <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted">
               <AppImage
-                src={mainImage.src}
-                alt={mainImage.alt}
-                className="w-full h-full object-cover transition-opacity duration-300"
+                src={project.afterImage}
+                alt={project.afterAlt}
+                className="w-full h-full object-cover"
               />
-
-              {/* Before/After toggle overlay */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center bg-black/60 backdrop-blur-sm rounded-full p-1 gap-1">
-                <button
-                  onClick={() => setActiveImage('before')}
-                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-200 ${
-                    activeImage === 'before'
-                      ? 'bg-white text-black'
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  Преди
-                </button>
-                <button
-                  onClick={() => setActiveImage('after')}
-                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-200 ${
-                    activeImage === 'after'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  След
-                </button>
-              </div>
             </div>
 
             {/* Thumbnail strip */}
-            <div className="flex gap-2 mt-2">
-              <button
-                onClick={() => setActiveImage('before')}
-                className={`relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all ${
-                  activeImage === 'before' ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
-                }`}
-              >
-                <AppImage
-                  src={project.beforeImage}
-                  alt={project.beforeAlt}
-                  className="w-full h-full object-cover"
-                />
-                <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] font-bold bg-black/50 text-white py-0.5">
-                  Преди
-                </span>
-              </button>
-
-              <button
-                onClick={() => setActiveImage('after')}
-                className={`relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all ${
-                  activeImage === 'after' ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
-                }`}
-              >
-                <AppImage
-                  src={project.afterImage}
-                  alt={project.afterAlt}
-                  className="w-full h-full object-cover"
-                />
-                <span className="absolute bottom-0 left-0 right-0 text-center text-[10px] font-bold bg-black/50 text-white py-0.5">
-                  След
-                </span>
-              </button>
-
-              {project.additionalImages?.map((img, index) => (
-                <div
-                  key={index}
-                  className="relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 border-transparent opacity-80"
-                >
-                  <AppImage
-                    src={img.image}
-                    alt={img.alt}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            {allImages.length > 1 && (
+              <div className="flex gap-2 mt-2 overflow-x-auto pb-1">
+                {allImages.map((img, index) => (
+                  <div
+                    key={index}
+                    className="relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 border-transparent opacity-80"
+                  >
+                    <AppImage
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Stats row */}
