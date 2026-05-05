@@ -60,7 +60,7 @@ const GOOGLE_REVIEWS_URL =
   'https://www.google.com/maps/place/D%26D+constructiongp+-+%D0%B8%D0%B7%D0%BA%D0%BE%D0%BF%D0%BD%D0%B8+%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8%26%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82+%D0%BD%D0%B0+%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8/@42.6418455,23.6162115,17z/data=!4m6!3m5!1s0x83e0a61756d826e5:0x2adb16d19b94df86!8m2!3d42.6418455!4d23.6162115!16s%2Fg%2F11ywd83xbq#lrd=0x83e0a61756d826e5:0x2adb16d19b94df86,1';
 
 const TOTAL_RATING = 5.0;
-const TOTAL_REVIEWS = 8;
+const TOTAL_REVIEWS = 10;
 
 const TestimonialsCarousel = () => {
   const [isHydrated, setIsHydrated] = useState(false);
