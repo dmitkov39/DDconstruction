@@ -5,12 +5,12 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import Header from '@/components/common/Header';
-import HeroSection from '.app/homepage/components/HeroSection';
-import ClientTypesBanner from '.app/homepage/components/ClientTypesBanner';
-import ServicesOverview from '@/app/homepage/components/ServicesOverview'
-import TrustIndicators from '@/app/homepage/components/TrustIndicators'
-import TestimonialsCarousel from '@/app/homepage/components/TestimonialsCarousel'
-import Footer from './components/Footer';
+import HeroSection from '@/app/homepage/components/HeroSection';
+import ClientTypesBanner from '@/app/homepage/components/ClientTypesBanner';
+import ServicesOverview from '@/app/homepage/components/ServicesOverview';
+import TrustIndicators from '@/app/homepage/components/TrustIndicators';
+import TestimonialsCarousel from '@/app/homepage/components/TestimonialsCarousel';
+import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
