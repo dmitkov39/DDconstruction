@@ -2,15 +2,12 @@
 const nextConfig = {
   productionBrowserSourceMaps: true,
   distDir: process.env.DIST_DIR || '.next',
-
   typescript: {
-      ignoreBuildErrors: true,
-    },
-
+    ignoreBuildErrors: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
-
   images: {
     remotePatterns: [
       {
@@ -27,16 +24,14 @@ const nextConfig = {
       },
     ],
   },
-
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/homepage',
-        permanent: false,
+        source: '/homepage',
+        destination: '/',
+        permanent: true,
       },
     ];
   }
 };
-
 export default nextConfig;
