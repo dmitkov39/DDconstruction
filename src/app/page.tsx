@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import Header from '@/components/common/Header';
-import HeroSection from './components/HeroSection';
+import HeroSection from '.app/homepage/components/HeroSection';
 import ClientTypesBanner from '.app/homepage/components/ClientTypesBanner';
 import ServicesOverview from '@/app/homepage/components/ServicesOverview'
 import TrustIndicators from '@/app/homepage/components/TrustIndicators'
