@@ -6,10 +6,10 @@ import Script from 'next/script';
 
 import Header from '@/components/common/Header';
 import HeroSection from './components/HeroSection';
-import ClientTypesBanner from './components/ClientTypesBanner';
-import ServicesOverview from './components/ServicesOverview';
-import TrustIndicators from './components/TrustIndicators';
-import TestimonialsCarousel from './components/TestimonialsCarousel';
+import ClientTypesBanner from '.app/homepage/components/ClientTypesBanner';
+import ServicesOverview from '@/app/homepage/components/ServicesOverview'
+import TrustIndicators from '@/app/homepage/components/TrustIndicators'
+import TestimonialsCarousel from '@/app/homepage/components/TestimonialsCarousel'
 import Footer from './components/Footer';
 
 export const metadata: Metadata = {
