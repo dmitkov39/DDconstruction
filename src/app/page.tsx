@@ -10,7 +10,7 @@ import ClientTypesBanner from '@/app/homepage/components/ClientTypesBanner';
 import ServicesOverview from '@/app/homepage/components/ServicesOverview';
 import TrustIndicators from '@/app/homepage/components/TrustIndicators';
 import TestimonialsCarousel from '@/app/homepage/components/TestimonialsCarousel';
-import Footer from '@/components/common/Footer';
+import Footer from '@/app/homepage/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
