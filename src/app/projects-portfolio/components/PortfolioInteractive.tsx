@@ -193,6 +193,24 @@ const PortfolioInteractive = () => {
       equipment: ['Takeuchi TB016', 'Кофа 20см.', 'Кофа 40см.', 'Хидравличен чук'],
       teamSize: '2 специалисти',
     },
+    {
+      id: 8,
+      title: 'Направа на две септичми ями в село Борика',
+      category: 'изкоп',
+      beforeImage: '/assets/images/borika1 (2).jpg',
+      beforeAlt: 'Takeuchi TB016',
+      afterImage: '/assets/images/borika2.jpg',
+      afterAlt: 'POV от кабината на Takeuchi TB016',
+      additionalImages: [
+        { image: '/assets/images/borika3.jpg', alt: 'Takeuchi TB016 вдигнат с кран' },
+        { image: '/assets/images/borika4.jpg', alt: '' },
+      ],
+      description: '.',
+      duration: ' 1 ДЕН',
+      location: 'Село Борика',
+      solution: 'Използвахме Takeuchi TB016 с кофа 20см, 40см.',
+      equipment: ['Takeuchi TB016', 'Кофа 20см.', 'Кофа 40см.'],
+      teamSize: '2 специалисти',
   ];
 
   const testimonials: Testimonial[] = [
