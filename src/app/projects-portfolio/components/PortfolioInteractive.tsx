@@ -211,6 +211,7 @@ const PortfolioInteractive = () => {
       solution: 'Използвахме Takeuchi TB016 с кофа 20см, 40см.',
       equipment: ['Takeuchi TB016', 'Кофа 20см.', 'Кофа 40см.'],
       teamSize: '2 специалисти',
+    }
   ];
 
   const testimonials: Testimonial[] = [
