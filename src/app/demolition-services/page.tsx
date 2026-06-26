@@ -1,4 +1,4 @@
-import Image from '/assets/images/old house demolition.jpg';
+import Image from import Image from 'next/image';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
@@ -50,7 +50,7 @@ export default function DemolitionServicesPage() {
 
             <div className="relative">
               <Image
-                src="/assets/images/demolition-old-house.jpg"
+                src="/assets/images/old-house-demolition.jpg"
                 alt="Събаряне на стара постройка с мини багер"
                 width={900}
                 height={700}
