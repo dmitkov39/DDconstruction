@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '/assets/images/old house demolition.jpg';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
