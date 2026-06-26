@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+import Image from 'next/image';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Събаряне на стари постройки София | D&D Construction',
   description:
     'Събаряне на стари къщи, навеси, гаражи и постройки в София и Софийска област. Извозване на отпадъци и почистване на терена.',
@@ -14,30 +14,51 @@ export default function DemolitionServicesPage() {
       <Header />
 
       <main className="pt-24">
-        <section className="container mx-auto px-4 py-16">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Събаряне на стари постройки
-          </h1>
+        <section className="bg-blue-50 py-20">
+          <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="font-semibold mb-6 text-sm">
+                ✅ Опитен екип и собствена техника
+              </p>
 
-          <p className="text-lg text-muted-foreground max-w-3xl mb-6">
-            D&D Construction предлага събаряне на стари постройки в София и
-            Софийска област – къщи, навеси, гаражи, стопански сгради и други
-            конструкции. Извършваме услугата цялостно: оглед, събаряне,
-            извозване на отпадъците и почистване на терена.
-          </p>
+              <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight mb-6">
+                Събаряне на <span className="text-primary">стари постройки</span>
+              </h1>
 
-          <p className="text-lg text-muted-foreground max-w-3xl mb-8">
-            Работим с подходяща техника според достъпа и състоянието на обекта.
-            Подходящо решение е за имоти, които трябва да бъдат освободени за
-            нов строеж, дворна площ или подготовка на терен.
-          </p>
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+                Премахваме стари къщи, навеси, гаражи и стопански постройки.
+                Извършваме цялата услуга — събаряне, товарене, извозване и
+                почистване на терена след работа.
+              </p>
 
-          <a
-            href="tel:+359878827128"
-            className="inline-block bg-primary text-white px-6 py-3 rounded-md font-semibold"
-          >
-            Обадете се за оглед
-          </a>
+              <div className="flex gap-4">
+                <a
+                  href="tel:+359878827128"
+                  className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
+                >
+                  Обадете се сега
+                </a>
+
+                <a
+                  href="/quick-quote"
+                  className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
+                >
+                  Безплатна оферта
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <Image
+                src="/assets/images/demolition-old-house.jpg"
+                alt="Събаряне на стара постройка с мини багер"
+                width={900}
+                height={700}
+                className="rounded-2xl shadow-xl object-cover"
+                priority
+              />
+            </div>
+          </div>
         </section>
       </main>
 
