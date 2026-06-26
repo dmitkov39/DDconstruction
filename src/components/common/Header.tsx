@@ -43,6 +43,7 @@ const Header = ({ className = '' }: HeaderProps) => {
     { name: 'Почистване на терени', href: '/site-cleaning-services' },
     { name: 'Нивелиране на терени', href: '/land-leveling-services' },
     { name: 'Транспорт на материали', href: '/material-transport-services' },
+    { name: 'Събаряне на стари постройки', href: '/demolition-services'},
   ];
 
   const [isServicesOpen, setIsServicesOpen] = useState(false);
