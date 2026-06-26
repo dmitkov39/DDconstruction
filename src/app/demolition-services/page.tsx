@@ -1,4 +1,4 @@
-import Image from import Image from 'next/image';
+import Image from 'next/image';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
