@@ -2,10 +2,13 @@ import Image from 'next/image';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
+const SITE_URL = 'https://www.ddconstructiongp.com';
+
 export const metadata = {
   title: 'Събаряне на стари постройки София | D&D Construction',
   description:
     'Събаряне на стари къщи, навеси, гаражи и постройки в София и Софийска област. Извозване на отпадъци и почистване на терена.',
+  alternates: { canonical: `${SITE_URL}/demolition-services` },
 };
 
 export default function DemolitionServicesPage() {
