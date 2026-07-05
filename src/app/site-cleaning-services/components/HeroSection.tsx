@@ -33,7 +33,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="tel:+359123456789"
+              href="tel:+359885078098"
               className="flex items-center justify-center space-x-2 w-full sm:w-auto px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105"
             >
               <Icon name="PhoneIcon" size={22} />
