@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import HeroSection from './HeroSection';
 import ServiceAreaMap from './ServiceAreaMap';
+import Footer from './Footer';
 
 interface ServiceArea {
   id: number;
