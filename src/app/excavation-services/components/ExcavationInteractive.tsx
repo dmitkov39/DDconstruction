@@ -18,7 +18,7 @@ const ExcavationInteractive = () => {
 
   const handleContactClick = () => {
     if (!isHydrated) return;
-    window.location.href = 'tel:+359881234567';
+    window.location.href = 'tel:+359878827128';
   };
 
   const handleQuoteClick = () => {
