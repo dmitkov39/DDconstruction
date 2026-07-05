@@ -113,8 +113,8 @@ const TestimonialsCarousel = () => {
           </h2>
 
           <p className="text-lg text-muted-foreground font-sans">
-            Над 30 успешно завършени проекта и стотици доволни клиенти в цяла България
-          </p>
+           Над 30 успешно завършени проекта и десетки доволни клиенти в София и региона
+        </p>
         </div>
 
         {/* Google Rating Badge */}
