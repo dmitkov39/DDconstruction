@@ -1,56 +1,16 @@
-import type { Metadata } from 'next';
 import Image from 'next/image';
-import Script from 'next/script';
 import Header from '@/components/common/Header';
 import Footer from '@/app/homepage/components/Footer';
 
-const SITE_URL = 'https://www.ddconstructiongp.com';
-
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Събаряне на стари постройки София | D&D Construction',
   description:
     'Събаряне на стари къщи, навеси, гаражи и постройки в София и Софийска област. Извозване на отпадъци и почистване на терена.',
-  keywords: [
-    'събаряне на постройки София',
-    'разбиване на стара къща',
-    'събаряне на гараж',
-    'разчистване след разрушаване',
-    'събаряне навес Софийска област',
-  ],
-  alternates: { canonical: `${SITE_URL}/demolition-services` },
-  openGraph: {
-    type: 'website',
-    url: `${SITE_URL}/demolition-services`,
-    title: 'Събаряне на стари постройки София | D&D Construction',
-    description:
-      'Събаряне на стари къщи, навеси, гаражи и постройки в София и Софийска област.',
-    locale: 'bg_BG',
-  },
-};
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Събаряне на постройки',
-  name: 'Събаряне на стари постройки',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'D&D Construction',
-    telephone: '+359878827128',
-  },
-  areaServed: ['София', 'Софийска област'],
-  description:
-    'Премахване на стари къщи, навеси, гаражи и стопански постройки, включително товарене, извозване и почистване на терена след работа.',
 };
 
 export default function DemolitionServicesPage() {
   return (
     <>
-      <Script
-        id="ld-json-demolition"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Header />
 
       <main className="pt-24">
@@ -86,6 +46,7 @@ export default function DemolitionServicesPage() {
                   Безплатна оферта
                 </a>
               </div>
+            </div>
 
             <div className="relative">
               <Image
