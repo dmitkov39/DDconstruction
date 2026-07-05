@@ -22,27 +22,27 @@ const MaterialTransportInteractive = () => {
   const serviceAreas: ServiceArea[] = [
     {
       id: 1,
-      region: 'София и Софийска област',
-      cities: ['София', 'Перник', 'Ботевград', 'Самоков', 'Костинброд'],
-      responseTime: '2-4 часа'
+      region: 'София - централна градска част',
+      cities: ['Център', 'Лозенец', 'Витоша', 'Младост', 'Люлин'],
+      responseTime: '1-2 часа'
     },
     {
       id: 2,
-      region: 'Пловдив и Южна България',
-      cities: ['Пловдив', 'Пазарджик', 'Асеновград', 'Карлово', 'Хасково'],
-      responseTime: '4-6 часа'
+      region: 'София - околни райони',
+      cities: ['Банкя', 'Нови хан', 'Костинброд', 'Божурище'],
+      responseTime: '2-3 часа'
     },
     {
       id: 3,
-      region: 'Варна и Черноморие',
-      cities: ['Варна', 'Бургас', 'Добрич', 'Шумен', 'Несебър'],
-      responseTime: '6-8 часа'
+      region: 'Софийска област - изток',
+      cities: ['Ихтиман', 'Елин Пелин', 'Горна Малина'],
+      responseTime: '2-4 часа'
     },
     {
       id: 4,
-      region: 'Северна България',
-      cities: ['Русе', 'Плевен', 'Велико Търново', 'Габрово', 'Разград'],
-      responseTime: '6-8 часа'
+      region: 'Софийска област - запад/юг',
+      cities: ['Перник', 'Самоков', 'Владая', 'Кладница'],
+      responseTime: '2-4 часа'
     }
   ];
 
@@ -66,7 +66,6 @@ const MaterialTransportInteractive = () => {
           </div>
         </div>
       </div>);
-
   }
 
   return (
@@ -74,8 +73,8 @@ const MaterialTransportInteractive = () => {
       <HeroSection
         onContactClick={handleContactClick}
         onQuoteClick={handleQuoteClick} />
-
       <ServiceAreaMap serviceAreas={serviceAreas} />
+      <Footer />
     </div>
   );
 };
