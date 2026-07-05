@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <Link href="/homepage" className="flex items-center space-x-3 mb-6 group">
+            <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative w-12 h-12 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
                 <svg
                   viewBox="0 0 48 48"
