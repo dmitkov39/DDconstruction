@@ -72,21 +72,20 @@ export default function DemolitionServicesPage() {
               </p>
 
               <div className="flex gap-4">
-                
+                <a
                   href="tel:+359878827128"
                   className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Обадете се сега
                 </a>
 
-                
+                <a
                   href="/quick-quote"
                   className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Безплатна оферта
                 </a>
               </div>
-            </div>
 
             <div className="relative">
               <Image
