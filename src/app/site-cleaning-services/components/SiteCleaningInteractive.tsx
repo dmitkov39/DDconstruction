@@ -4,6 +4,7 @@ import React from 'react';
 import HeroSection from './HeroSection';
 import ServicesOverview from './ServicesOverview';
 import PricingTimeline from './PricingTimeline';
+import Footer from '@/app/homepage/components/Footer';
 
 const SiteCleaningInteractive = () => {
   return (
@@ -11,6 +12,7 @@ const SiteCleaningInteractive = () => {
       <HeroSection />
       <ServicesOverview />
       <PricingTimeline />
+      <Footer />
     </>
   );
 };
