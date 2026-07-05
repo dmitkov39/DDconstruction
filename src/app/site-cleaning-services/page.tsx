@@ -16,7 +16,9 @@ export const metadata: Metadata = {
     'почистване двор София',
     'почистване площадка Софийска област',
   ],
-  alternates: { canonical: `${SITE_URL}/site-cleaning-services` },
+  alternates: {
+    canonical: `${SITE_URL}/site-cleaning-services`,
+  },
   openGraph: {
     type: 'website',
     url: `${SITE_URL}/site-cleaning-services`,
