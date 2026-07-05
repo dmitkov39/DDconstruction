@@ -86,6 +86,7 @@ export default function DemolitionServicesPage() {
                   Безплатна оферта
                 </a>
               </div>
+            </div>
 
             <div className="relative">
               <Image
