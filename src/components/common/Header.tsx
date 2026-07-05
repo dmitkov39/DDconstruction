@@ -31,7 +31,7 @@ const Header = ({ className = '' }: HeaderProps) => {
   }, [isMobileMenuOpen]);
 
   const navigationItems = [
-    { name: 'Начало', href: '/homepage' },
+    { name: 'Начало', href: '/' },
     { name: 'Услуги', href: '/excavation-services', hasDropdown: true },
     { name: 'Проекти', href: '/projects-portfolio' },
     { name: 'За D&D', href: '/about' },
@@ -65,7 +65,7 @@ const Header = ({ className = '' }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link
-            href="/homepage"
+            href="/"
             className="flex items-center space-x-3 group"
             onClick={closeMobileMenu}
           >
