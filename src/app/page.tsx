@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     'мини багер Нови хан',
   ],
   alternates: {
-    canonical: `${SITE_URL}/homepage`,
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
     type: 'website',
-    url: `${SITE_URL}/homepage`,
+    url: `${SITE_URL}/`,
     title: `Изкопни услуги с мини багер | Заравняване и почистване – ${BRAND_NAME}`,
     description:
       'Изкопни услуги с мини багер в София и Софийска област: заравняване на терени, почистване на обекти и транспорт на материали.',
