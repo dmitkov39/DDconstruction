@@ -56,14 +56,14 @@ export default function VikServicesPage() {
 
               <div className="flex gap-4">
                 
-                  href="tel:+359878827128"
+                <a href="tel:+359878827128"
                   className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Обадете се сега
                 </a>
 
                 
-                  href="/quick-quote"
+                <a href="/quick-quote"
                   className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Безплатна оферта
