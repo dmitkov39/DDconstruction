@@ -6,7 +6,7 @@ import Icon from '@/components/ui/AppIcon';
 const SITE_URL = 'https://www.ddconstructiongp.com';
 
 export const metadata = {
-  title: 'ВиК услуги София | Водопровод и канализация – D&D Construction',
+  title: 'ВиК услуги София | Водопровод и канализация',
   description:
     'Изкопни ВиК услуги в София и Софийска област – полагане и ремонт на водопроводни и канализационни връзки, изкопи за отводняване. Собствена техника, бърз и коректен срок.',
   alternates: { canonical: `${SITE_URL}/vik-services` },
@@ -51,10 +51,6 @@ export default function VikServicesPage() {
                 <li className="flex items-start space-x-2">
                   <Icon name="CheckCircleIcon" size={20} className="text-primary mt-0.5 flex-shrink-0" variant="solid" />
                   <span>Разкопаване при аварии и последващо възстановяване на терена</span>
-                </li>
-                 <li className="flex items-start space-x-2">
-                  <Icon name="CheckCircleIcon" size={20} className="text-primary mt-0.5 flex-shrink-0" variant="solid" />
-                  <span>изграждане на септични ями и пречиствателни станции</span>
                 </li>
               </ul>
 
