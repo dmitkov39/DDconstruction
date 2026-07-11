@@ -40,6 +40,7 @@ const Header = ({ className = '' }: HeaderProps) => {
 
   const serviceItems = [
     { name: 'Изкопни работи', href: '/excavation-services' },
+    { name: 'ВиК услуги', href: '/vik-services' },
     { name: 'Почистване на терени', href: '/site-cleaning-services' },
     { name: 'Нивелиране на терени', href: '/land-leveling-services' },
     { name: 'Транспорт на материали', href: '/material-transport-services' },
