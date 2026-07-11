@@ -5,7 +5,7 @@ import Footer from '@/app/homepage/components/Footer';
 const SITE_URL = 'https://www.ddconstructiongp.com';
 
 export const metadata = {
-  title: 'Събаряне на стари постройки София | D&D Construction',
+  title: 'Събаряне на стари постройки София',
   description:
     'Събаряне на стари къщи, навеси, гаражи и постройки в София и Софийска област. Извозване на отпадъци и почистване на терена.',
   alternates: { canonical: `${SITE_URL}/demolition-services` },
@@ -35,14 +35,14 @@ export default function DemolitionServicesPage() {
               </p>
 
               <div className="flex gap-4">
-                <a
+                
                   href="tel:+359878827128"
                   className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Обадете се сега
                 </a>
 
-                <a
+                
                   href="/quick-quote"
                   className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
                 >
