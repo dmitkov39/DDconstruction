@@ -40,13 +40,14 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-tight">
-              Терен{' '}
-              <span className="text-primary">готов за следващия строителен етап</span> –{' '}
+              Изкопни услуги и ВиК в София{' '}
+              <span className="text-primary">– терен готов за следващия етап</span> –{' '}
               <span className="text-conversion">в договорен срок и без забавяния</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-black-300 font-sans leading-relaxed">
-              Цялостни изкопни работи и подготовка на терени,
+              Цялостни изкопни работи, ВиК услуги и подготовка на терени –
+              изграждане на канализация, септични ями и водопроводни връзки,
               изпълнени в договорен срок и готови за следващия етап от строителството.
               Поемаме цялата отговорност – от изкопа до готов терен. При забавяне по наша вина, всеки допълнителен ден, не се заплаща.
             </p>
@@ -93,22 +94,6 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
                 className="w-full h-[500px] object-cover" />
 
               <div className="absolute inset-0 from-foreground/60 via-transparent to-transparent bg-[rgba(247,151,151,0)]"></div>
-              
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
