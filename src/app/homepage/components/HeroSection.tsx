@@ -90,7 +90,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <AppImage
                 src="/assets/images/image-1767986966482.png"
-                alt="Professional construction workers in excavation trench with excavator, demonstrating teamwork and controlled execution on construction site"
+                alt="Строителни работници в изкоп с багер по време на изкопни дейности в София"
                 className="w-full h-[500px] object-cover" />
 
               <div className="absolute inset-0 from-foreground/60 via-transparent to-transparent bg-[rgba(247,151,151,0)]"></div>
