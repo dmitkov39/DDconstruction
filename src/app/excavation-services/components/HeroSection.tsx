@@ -69,7 +69,7 @@ const HeroSection = ({ onContactClick, onQuoteClick }: HeroSectionProps) => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <AppImage
                 src="https://images.unsplash.com/photo-1611795495701-8d028c641323"
-                alt="Yellow excavator digging foundation on construction site with operator in cabin"
+                alt="Жълт багер копае основи на строителна площадка с оператор в кабината"
                 className="w-full h-[500px] object-cover" />
 
               
