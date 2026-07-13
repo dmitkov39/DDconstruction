@@ -19,7 +19,7 @@ export default function VikServicesPage() {
 
       <main className="pt-24">
         <section className="bg-blue-50 py-20">
-          <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
                 <Icon name="CheckBadgeIcon" size={18} className="text-primary" variant="solid" />
@@ -55,14 +55,12 @@ export default function VikServicesPage() {
               </ul>
 
               <div className="flex gap-4">
-                
                 <a href="tel:+359878827128"
                   className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Обадете се сега
                 </a>
 
-                
                 <a href="/quick-quote"
                   className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
                 >
@@ -77,7 +75,7 @@ export default function VikServicesPage() {
                 alt="Изкопана траншея за ВиК връзка"
                 width={600}
                 height={450}
-                className="rounded-2xl shadow-lg object-cover w-full h-auto"
+                className="rounded-2xl shadow-lg object-cover w-full h-[380px] lg:h-[450px]"
                 priority
               />
             </div>
