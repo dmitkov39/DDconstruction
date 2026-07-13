@@ -73,8 +73,8 @@ export default function VikServicesPage() {
               <Image
                 src="/assets/images/20251201_123557-1766602582373.jpg"
                 alt="Изкопана траншея за ВиК връзка"
-                width={800}
-                height={650}
+                width={1100}
+                height={950}
                 className="rounded-2xl shadow-lg object-cover w-full h-[380px] lg:h-[450px]"
                 priority
               />
