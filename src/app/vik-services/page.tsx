@@ -75,7 +75,7 @@ export default function VikServicesPage() {
                 alt="Изкопана траншея за ВиК връзка"
                 width={1100}
                 height={950}
-                className="rounded-2xl shadow-lg object-cover w-full h-[380px] lg:h-[450px]"
+                className="rounded-2xl shadow-lg object-cover w-full h-[1100px] lg:h-[950px]"
                 priority
               />
             </div>
