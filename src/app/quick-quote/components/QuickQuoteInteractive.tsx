@@ -30,15 +30,10 @@ interface FormField {
 }
 
 const QuickQuoteInteractive: React.FC = () => {
-  const [isHydrated, setIsHydrated] = useState(false);
   const [selectedService, setSelectedService] = useState<string>('');
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [estimate, setEstimate] = useState<number | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
 
   const services: Service[] = [
     {
@@ -320,24 +315,6 @@ const QuickQuoteInteractive: React.FC = () => {
   }, [formData, selectedService]);
 
   const currentService = services.find((s) => s.id === selectedService);
-
-  if (!isHydrated) {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="h-20"></div>
-        <div className="container mx-auto px-4 py-16">
-          <div className="animate-pulse space-y-8">
-            <div className="h-12 bg-muted rounded w-1/3"></div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-48 bg-muted rounded-lg"></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-background">
