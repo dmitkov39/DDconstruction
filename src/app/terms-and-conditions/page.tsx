@@ -395,7 +395,7 @@ const TermsAndConditionsPage = () => {
               {/* Back to Home */}
               <div className="mt-12 text-center">
                 <Link 
-                  href="/homepage" 
+                  href="/" 
                   className="inline-flex items-center space-x-2 bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300"
                 >
                   <Icon name="HomeIcon" size={20} />
