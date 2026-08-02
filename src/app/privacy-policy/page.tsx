@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
+import Footer from '@/app/homepage/components/Footer';
 import Icon from '@/components/ui/AppIcon';
 
 interface SectionProps {
