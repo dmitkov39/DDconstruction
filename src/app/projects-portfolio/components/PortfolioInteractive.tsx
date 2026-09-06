@@ -216,9 +216,9 @@ const PortfolioInteractive = () => {
       id: 9,
       title: 'Обратен насип на новостроящ се ресторант',
       category: 'изкопни дейности',
-      beforeImage: '/assets/images/обратен_насип 1.jpg',
+      beforeImage: '/assets/images/обратен_насип_1.jpg',
       beforeAlt: 'Gehl 4240E скид-стий товарач прави обратен насип',
-      afterImage: '/assets/images/обратен_насип 2.jpg',
+      afterImage: '/assets/images/обратен_насип_2.jpg',
       afterAlt: 'Гледка от кабината на Gehl 4240E показваща голямото празно пространство',
       additionalImages: [
         {
