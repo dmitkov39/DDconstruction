@@ -28,9 +28,12 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   useEffect(() => {
     if (project) {
       document.body.style.overflow = 'hidden';
+      setActiveIndex(0);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -46,6 +49,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     { src: project.beforeImage, alt: project.beforeAlt },
     ...(project.additionalImages?.map((img) => ({ src: img.image, alt: img.alt })) ?? []),
   ];
+
+  const activeImage = allImages[activeIndex] ?? allImages[0];
 
   return (
     <div
@@ -77,8 +82,8 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           <div>
             <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-muted">
               <AppImage
-                src={project.afterImage}
-                alt={project.afterAlt}
+                src={activeImage.src}
+                alt={activeImage.alt}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -87,16 +92,23 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             {allImages.length > 1 && (
               <div className="flex gap-2 mt-2 overflow-x-auto pb-1">
                 {allImages.map((img, index) => (
-                  <div
+                  <button
                     key={index}
-                    className="relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 border-transparent opacity-80"
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Покажи снимка ${index + 1}`}
+                    className={`relative h-16 w-24 rounded overflow-hidden flex-shrink-0 border-2 transition-all duration-200 ${
+                      index === activeIndex
+                        ? 'border-primary opacity-100'
+                        : 'border-transparent opacity-70 hover:opacity-100'
+                    }`}
                   >
                     <AppImage
                       src={img.src}
                       alt={img.alt}
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                  </button>
                 ))}
               </div>
             )}
