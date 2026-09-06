@@ -106,7 +106,6 @@ function AppImage({
         quality,
         placeholder,
         blurDataURL,
-        unoptimized: true,
         onError: handleError,
         onLoad: handleLoad,
         onClick,
