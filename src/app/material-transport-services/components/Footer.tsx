@@ -150,10 +150,10 @@ const Footer = () => {
                   className="text-primary flex-shrink-0 mt-0.5"
                 />
                 <a
-                  href="mailto:info@ddconstruction.bg"
+                  href="mailto:ddconstruction988@gmail.com"
                   className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors duration-300"
                 >
-                  info@ddconstruction.bg
+                  ddconstruction988@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
