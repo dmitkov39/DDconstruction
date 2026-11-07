@@ -75,7 +75,7 @@ const EmergencyServices = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:+359123456789"
+                    href="tel:+359878827128"
                     className="flex items-center justify-center space-x-2 px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg animate-pulse"
                   >
                     <Icon name="PhoneIcon" size={22} />
