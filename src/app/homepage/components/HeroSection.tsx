@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
 import AppImage from '@/components/ui/AppImage';
@@ -10,18 +8,6 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ className = '' }: HeroSectionProps) => {
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  const handleCallClick = () => {
-    if (isHydrated && typeof window !== 'undefined') {
-      window.location.href = 'tel:+359878827128';
-    }
-  };
-
   return (
     <section className={`relative bg-gradient-to-br from-background via-muted to-background overflow-hidden ${className}`}>
       <div className="absolute inset-0 opacity-5">
@@ -53,13 +39,13 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={handleCallClick}
+              <a
+                href="tel:+359878827128"
                 className="flex items-center justify-center space-x-3 px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95">
 
                 <Icon name="PhoneIcon" size={24} variant="solid" />
                 <span>Обадете се сега</span>
-              </button>
+              </a>
 
               <Link
                 href="/quick-quote"
@@ -101,8 +87,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default HeroSection;
