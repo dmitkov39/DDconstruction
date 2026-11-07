@@ -161,7 +161,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <Icon name="EnvelopeIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@ddconstruction.bg" className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300">
+                <a href="mailto:ddconstruction988@gmail.com" className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300">
                   ddconstruction988@gmail.com
                 </a>
               </li>
