@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { submitLead, LEAD_ERROR_MESSAGE } from '@/lib/submitLead';
 
 interface FormData {
   name: string;
@@ -45,12 +46,26 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setSubmitStatus('success');
+    setSubmitStatus('idle');
+
+    const result = await submitLead('Запитване – Почистване на обекти', {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      serviceType: formData.serviceType,
+      area: formData.area ? `${formData.area} м²` : '',
+      message: formData.message
+    });
+
     setIsSubmitting(false);
-    
+
+    if (!result.ok) {
+      setSubmitStatus('error');
+      return;
+    }
+
+    setSubmitStatus('success');
+
     setFormData({
       name: '',
       phone: '',
@@ -218,6 +233,13 @@ const ContactForm = () => {
                       />
                     </div>
 
+                    {submitStatus === 'error' && (
+                      <div className="flex items-start space-x-3 bg-destructive/10 p-4 rounded-lg">
+                        <Icon name="ExclamationCircleIcon" size={20} className="text-destructive flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-foreground">{LEAD_ERROR_MESSAGE}</p>
+                      </div>
+                    )}
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -246,7 +268,7 @@ const ContactForm = () => {
 
                 <div className="space-y-6 mb-8">
                   <a
-                    href="tel:+359123456789"
+                    href="tel:+359878827128"
                     className="flex items-start space-x-4 group"
                   >
                     <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
@@ -257,13 +279,13 @@ const ContactForm = () => {
                         Телефон
                       </p>
                       <p className="text-base text-primary font-bold">
-                        +359 123 456 789
+                        +359 878 827 128
                       </p>
                     </div>
                   </a>
 
                   <a
-                    href="mailto:info@ddconstruction.bg"
+                    href="mailto:ddconstruction988@gmail.com"
                     className="flex items-start space-x-4 group"
                   >
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors duration-300">
@@ -274,7 +296,7 @@ const ContactForm = () => {
                         Имейл
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        info@ddconstruction.bg
+                        ddconstruction988@gmail.com
                       </p>
                     </div>
                   </a>
