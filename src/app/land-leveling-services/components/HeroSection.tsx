@@ -1,11 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
 
-interface HeroSectionProps {
-  onContactClick: () => void;
-}
-
-const HeroSection = ({ onContactClick }: HeroSectionProps) => {
+const HeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/5 pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -37,12 +34,12 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
               <span>Обадете се сега</span>
             </a>
             
-            <button
-              onClick={onContactClick}
-              className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105"
+            <Link
+              href="/quick-quote"
+              className="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105"
             >
               Безплатна оферта
-            </button>
+            </Link>
           </div>
           
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
