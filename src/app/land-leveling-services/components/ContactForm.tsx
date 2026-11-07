@@ -2,6 +2,21 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { submitLead, LEAD_ERROR_MESSAGE } from '@/lib/submitLead';
+
+const terrainLabels: Record<string, string> = {
+  residential: 'Жилищно строителство',
+  industrial: 'Индустриален обект',
+  agricultural: 'Земеделска земя',
+  sports: 'Спортен терен',
+  other: 'Друго'
+};
+
+const urgencyLabels: Record<string, string> = {
+  urgent: 'Спешно (до 1 седмица)',
+  normal: 'Нормално (1-2 седмици)',
+  flexible: 'Гъвкаво (над 2 седмици)'
+};
 
 interface FormData {
   name: string;
@@ -44,12 +59,28 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setSubmitStatus('success');
+    setSubmitStatus('idle');
+
+    const result = await submitLead('Запитване – Заравняване на терени', {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      area: formData.area ? `${formData.area} м²` : '',
+      location: formData.location,
+      terrainType: terrainLabels[formData.terrainType] || formData.terrainType,
+      urgency: urgencyLabels[formData.urgency] || formData.urgency,
+      message: formData.message
+    });
+
     setIsSubmitting(false);
-    
+
+    if (!result.ok) {
+      setSubmitStatus('error');
+      return;
+    }
+
+    setSubmitStatus('success');
+
     setFormData({
       name: '',
       phone: '',
@@ -266,7 +297,14 @@ const ContactForm = () => {
                     Вашите данни са защитени и ще бъдат използвани само за връзка с вас относно запитването.
                   </p>
                 </div>
-                
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-start space-x-3 bg-destructive/10 p-4 rounded-lg">
+                    <Icon name="ExclamationCircleIcon" size={20} className="text-destructive flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-foreground">{LEAD_ERROR_MESSAGE}</p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
