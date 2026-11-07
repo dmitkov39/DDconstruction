@@ -251,7 +251,7 @@ const PortfolioInteractive = () => {
           alt: 'k',
         },
         {
-          image: '/assets/images/kanali3.jpg',
+          image: '/assets/images/kanali 3.jpg',
           alt: 'k',
         },
         {
