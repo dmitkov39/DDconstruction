@@ -245,7 +245,8 @@ const PortfolioInteractive = () => {
       beforeAlt: отводнителни канали-преди',
       afterImage: '/assets/images/kanali4.jpg',
       afterAlt: 'краен резултат',
-      additionalImages: [
+      additionalImages: 
+        [
         {
           image: '/assets/images/kanali2.jpg',
           alt: 'k',
@@ -275,7 +276,8 @@ const PortfolioInteractive = () => {
     },
   ];
 
-  const testimonials: Testimonial[] = [
+  const testimonials: Testimonial[] = 
+    [
     {
       id: 1,
       clientName: 'Иван Кузманов',
