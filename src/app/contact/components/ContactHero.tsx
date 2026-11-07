@@ -40,7 +40,7 @@ const ContactHero = ({ className = '' }: ContactHeroProps) => {
             </a>
             
             <a
-              href="mailto:info@ddconstruction.bg"
+              href="mailto:ddconstruction988@gmail.com"
               className="flex items-center space-x-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg w-full sm:w-auto justify-center"
             >
               <Icon name="EnvelopeIcon" size={24} />
