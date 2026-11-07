@@ -242,7 +242,7 @@ const PortfolioInteractive = () => {
       title: 'Поставяне на отводнителни канали пред Жилищна сграда в София',
       category: 'Отводняване',
       beforeImage: '/assets/images/kanali1.jpg',
-      beforeAlt: отводнителни канали-преди',
+      beforeAlt: 'отводнителни канали-преди',
       afterImage: '/assets/images/kanali4.jpg',
       afterAlt: 'краен резултат',
       additionalImages: 
