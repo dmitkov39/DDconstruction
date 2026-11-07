@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { submitLead, LEAD_ERROR_MESSAGE } from '@/lib/submitLead';
 
 interface ContactFormProps {
   estimate: number | null;
@@ -31,6 +32,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = (): boolean => {
     const newErrors: Partial<ContactFormData> = {};
@@ -63,17 +65,31 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
+
+    const result = await submitLead('Запитване – Бърза оферта', {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      service: selectedService,
+      estimate: estimate !== null && estimate !== undefined ? `${estimate}` : '',
+      message: formData.message,
+    });
+
+    setIsSubmitting(false);
+
+    if (!result.ok) {
+      setSubmitError(result.error || LEAD_ERROR_MESSAGE);
+      return;
+    }
+
+    onSubmit(formData);
+    setSubmitSuccess(true);
+    setFormData({ name: '', phone: '', email: '', message: '' });
 
     setTimeout(() => {
-      onSubmit(formData);
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', phone: '', email: '', message: '' });
-
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+      setSubmitSuccess(false);
+    }, 5000);
   };
 
   const handleChange = (field: keyof ContactFormData, value: string) => {
@@ -103,6 +119,13 @@ const ContactForm: React.FC<ContactFormProps> = ({
               Благодарим ви! Ще се свържем с вас в рамките на 24 часа.
             </p>
           </div>
+        </div>
+      )}
+
+      {submitError && (
+        <div className="mb-6 p-4 border-2 border-error rounded-lg flex items-start space-x-3">
+          <Icon name="ExclamationCircleIcon" size={24} className="text-error flex-shrink-0" />
+          <p className="text-sm text-foreground">{submitError}</p>
         </div>
       )}
 
@@ -141,9 +164,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
           </label>
           <input
             type="tel"
-            name="phone"
+            id="phone"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={(e) => handleChange('phone', e.target.value)}
             className={`w-full px-4 py-3 border-2 rounded-lg bg-background text-foreground focus:outline-none transition-colors duration-300 ${
               errors.phone ? 'border-error' : 'border-border focus:border-primary'
             }`}
