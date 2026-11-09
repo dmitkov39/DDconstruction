@@ -7,6 +7,7 @@ const services = [
   { name: 'ВиК услуги', href: '/vik-services' },
   { name: 'Почистване на обекти', href: '/site-cleaning-services' },
   { name: 'Заравняване на терени', href: '/land-leveling-services' },
+  { name: 'Озеленяване и дворове', href: '/landscaping-services' },
   { name: 'Транспорт на материали', href: '/material-transport-services' },
   { name: 'Събаряне на стари постройки', href: '/demolition-services' },
 ];
