@@ -174,18 +174,18 @@ export default function LandscapingServicesPage() {
 
       <main className="pt-24">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/5 py-16 lg:py-24">
+        <section className="bg-gradient-to-br from-success/10 via-background to-accent/5 py-16 lg:py-24">
           <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-                <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
+              <div className="inline-flex items-center space-x-2 bg-success/10 px-4 py-2 rounded-full mb-6">
+                <Icon name="CheckBadgeIcon" size={20} className="text-success" variant="solid" />
                 <span className="text-sm font-heading font-semibold text-foreground">
                   Собствена техника и опитен екип
                 </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
-                Озеленяване и <span className="text-primary">оформяне на дворове</span> в София
+                Озеленяване и <span className="text-success">оформяне на дворове</span> в София
               </h1>
 
               <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
@@ -204,7 +204,7 @@ export default function LandscapingServicesPage() {
                 </a>
                 <Link
                   href="/quick-quote"
-                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-success text-success-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
                 >
                   <Icon name="DocumentTextIcon" size={20} />
                   <span>Безплатна оферта</span>
@@ -240,8 +240,8 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
                 <div key={s.title} className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={s.icon} size={26} className="text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
+                    <Icon name={s.icon} size={26} className="text-success" />
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{s.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{s.text}</p>
@@ -266,8 +266,8 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {reasons.map((r) => (
                 <div key={r.title} className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={r.icon} size={28} className="text-primary" />
+                  <div className="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name={r.icon} size={28} className="text-success" />
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{r.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{r.text}</p>
@@ -287,7 +287,7 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((s, i) => (
                 <div key={s.title} className="relative bg-card border border-border rounded-xl p-6">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading font-bold mb-4">
+                  <div className="w-10 h-10 rounded-full bg-success text-success-foreground flex items-center justify-center font-heading font-bold mb-4">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-heading font-bold mb-2">{s.title}</h3>
@@ -326,11 +326,11 @@ export default function LandscapingServicesPage() {
         {/* CTA */}
         <section className="py-16 lg:py-20">
           <div className="container mx-auto px-4">
-            <div className="bg-primary rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+            <div className="bg-success rounded-2xl p-8 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-success-foreground mb-4">
                 Искате да оформите двора си?
               </h2>
-              <p className="text-primary-foreground text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-success-foreground text-lg mb-8 max-w-2xl mx-auto">
                 Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем какво и как може да се направи.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

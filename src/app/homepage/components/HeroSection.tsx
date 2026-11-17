@@ -27,7 +27,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-tight">
               Цялостно преобразяване на двора в София{' '}
-              <span className="text-primary">– от първия изкоп до готов двор</span>
+              <span className="text-success">– от първия изкоп до готов двор</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-black-300 font-sans leading-relaxed">

@@ -11,6 +11,7 @@ interface Stage {
   alt: string;
   href: string;
   items: string[];
+  green?: boolean;
 }
 
 const stages: Stage[] = [
@@ -59,6 +60,7 @@ const stages: Stage[] = [
   },
   {
     id: 4,
+    green: true,
     title: 'Довършване',
     subtitle: 'Готов двор за живеене',
     image: '/assets/images/ozelenyavane-hero.jpg',
@@ -96,7 +98,7 @@ const ServicesOverview = () => {
 
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-heading font-bold text-foreground mb-6">
             От първия изкоп до{' '}
-            <span className="text-primary">готов двор</span> – в 4 етапа
+            <span className="text-success">готов двор</span> – в 4 етапа
           </h2>
 
           <p className="text-lg text-muted-foreground font-sans">
@@ -118,14 +120,14 @@ const ServicesOverview = () => {
                   alt={stage.alt}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                <div className={`absolute top-4 left-4 w-12 h-12 ${stage.green ? 'bg-success' : 'bg-primary'} rounded-full flex items-center justify-center shadow-lg`}>
                   <span className="text-2xl font-heading font-bold text-primary-foreground">{stage.id}</span>
                 </div>
               </div>
 
               <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <div>
-                  <h3 className="text-xl font-heading font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  <h3 className={`text-xl font-heading font-bold text-foreground transition-colors duration-300 ${stage.green ? 'group-hover:text-success' : 'group-hover:text-primary'}`}>
                     {stage.title}
                   </h3>
                   <p className="text-sm text-muted-foreground font-sans mt-1">{stage.subtitle}</p>
@@ -140,7 +142,7 @@ const ServicesOverview = () => {
                   ))}
                 </ul>
 
-                <div className="flex items-center space-x-2 text-primary font-heading font-semibold text-base pt-2">
+                <div className={`flex items-center space-x-2 font-heading font-semibold text-base pt-2 ${stage.green ? 'text-success' : 'text-primary'}`}>
                   <span>Научете повече</span>
                   <Icon name="ArrowRightIcon" size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
