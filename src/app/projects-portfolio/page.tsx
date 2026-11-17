@@ -3,7 +3,7 @@ import Header from '@/components/common/Header';
 import PortfolioInteractive from './components/PortfolioInteractive';
 
 export const metadata: Metadata = {
-  title: 'Портфолио проекти - D&D Construction',
+  title: 'Портфолио проекти',
   description: 'Разгледайте нашето портфолио от успешно завършени строителни проекти включващи изкопни работи, почистване на обекти, заравняване на терени и транспорт на материали с реални отзиви от клиенти.',
 };
 
