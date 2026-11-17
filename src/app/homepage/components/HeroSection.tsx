@@ -60,7 +60,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
                 <div className="text-sm text-muted-foreground font-sans mt-1">Завършени проекти без забавяне</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-heading font-bold text-accent">5+</div>
+                <div className="text-3xl lg:text-4xl font-heading font-bold text-secondary">5+</div>
                 <div className="text-sm text-muted-foreground font-sans mt-1">Години опит и работата по реални строителни графици</div>
               </div>
               <div className="text-center">
