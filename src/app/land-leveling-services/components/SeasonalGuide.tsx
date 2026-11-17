@@ -23,7 +23,7 @@ const SeasonalGuide = () => {
       season: 'Лято (Юни - Август)',
       icon: 'FireIcon',
       rating: 'Добро',
-      ratingColor: 'text-warning',
+      ratingColor: 'text-accent',
       advantages: [
         'Суха почва - лесно копане',
         'Дълъг работен ден',

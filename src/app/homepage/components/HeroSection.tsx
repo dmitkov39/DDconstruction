@@ -21,21 +21,19 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
             <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full">
               <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
               <span className="text-sm font-heading font-semibold text-foreground">
-                Над 5 години опит в строителството
+                Над 5 години опит и собствена техника
               </span>
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-tight">
-              Изкопни услуги и ВиК в София{' '}
-              <span className="text-primary">– терен готов за следващия етап</span> –{' '}
-              <span className="text-conversion">в договорен срок и без забавяния</span>
+              Цялостно преобразяване на двора в София{' '}
+              <span className="text-primary">– от първия изкоп до готов двор</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-black-300 font-sans leading-relaxed">
-              Цялостни изкопни работи, ВиК услуги и подготовка на терени –
-              изграждане на канализация, септични ями и водопроводни връзки,
-              изпълнени в договорен срок и готови за следващия етап от строителството.
-              Поемаме цялата отговорност – от изкопа до готов терен. При забавяне по наша вина, всеки допълнителен ден, не се заплаща.
+              Изкопи, заравняване, подпорни стени, дренаж, ВиК, настилки и засаждане на трева
+              и растения – един изпълнител и една отговорност за целия двор.
+              При забавяне по наша вина, всеки допълнителен ден не се заплаща.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -52,7 +50,7 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
                 className="flex items-center justify-center space-x-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95">
 
                 <Icon name="DocumentTextIcon" size={24} variant="solid" />
-                <span>Безплатна оферта</span>
+                <span>Безплатен оглед и оферта</span>
               </Link>
             </div>
 

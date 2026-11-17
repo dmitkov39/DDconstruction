@@ -4,7 +4,7 @@ const SITE_URL = 'https://www.ddconstructiongp.com';
 
 // Обновявай тази дата, когато промениш съдържанието на сайта.
 // (new Date() би казвал на Google, че всичко се променя при всеки билд.)
-const LAST_UPDATED = new Date('2026-11-07');
+const LAST_UPDATED = new Date('2026-11-17');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/landscaping-services`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/site-cleaning-services`,

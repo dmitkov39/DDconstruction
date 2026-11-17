@@ -37,18 +37,18 @@ const Footer = () => {
 
                   <path
                     d="M8 32L16 24L24 28L32 20L40 24V40H8V32Z"
-                    fill="#FDD835" />
+                    fill="#F5C518" />
 
-                  <rect x="12" y="36" width="4" height="4" fill="#1976D2" />
-                  <rect x="20" y="34" width="4" height="6" fill="#1976D2" />
-                  <rect x="28" y="32" width="4" height="8" fill="#1976D2" />
+                  <rect x="12" y="36" width="4" height="4" fill="#2E7D32" />
+                  <rect x="20" y="34" width="4" height="6" fill="#2E7D32" />
+                  <rect x="28" y="32" width="4" height="8" fill="#2E7D32" />
                   <path
                     d="M4 28L8 24L12 20L16 16L20 12"
-                    stroke="#1565C0"
+                    stroke="#1B5E20"
                     strokeWidth="2"
                     strokeLinecap="round" />
 
-                  <circle cx="38" cy="10" r="3" fill="#FDD835" />
+                  <circle cx="38" cy="10" r="3" fill="#F5C518" />
                   <path
                     d="M36 8L40 12"
                     stroke="#000000"
@@ -67,7 +67,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-white/80 font-sans text-sm leading-relaxed mb-6">
-              Професионални строителни услуги с над 5 години опит. Модерна техника, опитен екип и гарантирано качество.
+              Цялостно оформяне на дворове в София и региона – от първия изкоп до готов двор. Собствена техника и един изпълнител за всичко.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300 flex items-center space-x-2 group">
+                    className="text-white/80 hover:text-warning font-sans text-sm transition-colors duration-300 flex items-center space-x-2 group">
 
                     <Icon name="ChevronRightIcon" size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                     <span>{service.name}</span>
@@ -95,7 +95,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300 flex items-center space-x-2 group">
+                    className="text-white/80 hover:text-warning font-sans text-sm transition-colors duration-300 flex items-center space-x-2 group">
 
                     <Icon name="ChevronRightIcon" size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                     <span>{item.name}</span>
@@ -109,30 +109,30 @@ const Footer = () => {
             <h3 className="text-lg font-heading font-bold mb-6">Контакти</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <Icon name="MapPinIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                <Icon name="MapPinIcon" size={20} className="text-warning flex-shrink-0 mt-0.5" />
                 <span className="text-white/80 font-sans text-sm">
                   1138 София, България
                 </span>
               </li>
               <li className="flex items-start space-x-3">
-                <Icon name="PhoneIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                <Icon name="PhoneIcon" size={20} className="text-warning flex-shrink-0 mt-0.5" />
                 <div className="space-y-1">
-                  <a href="tel:+359878827128" className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300 block">
+                  <a href="tel:+359878827128" className="text-white/80 hover:text-warning font-sans text-sm transition-colors duration-300 block">
                     +359 878 827 128
                   </a>
-                  <a href="tel:+359885078098" className="text-destructive hover:text-primary font-sans text-sm transition-colors duration-300 block">
+                  <a href="tel:+359885078098" className="text-warning hover:text-white font-sans text-sm transition-colors duration-300 block">
                     +359 885 078 098 (24/7)
                   </a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
-                <Icon name="EnvelopeIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
-                <a href="mailto:ddconstruction988@gmail.com" className="text-white/80 hover:text-primary font-sans text-sm transition-colors duration-300">
+                <Icon name="EnvelopeIcon" size={20} className="text-warning flex-shrink-0 mt-0.5" />
+                <a href="mailto:ddconstruction988@gmail.com" className="text-white/80 hover:text-warning font-sans text-sm transition-colors duration-300">
                   ddconstruction988@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3 mt-4">
-                <Icon name="ClockIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                <Icon name="ClockIcon" size={20} className="text-warning flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="text-sm font-semibold text-white/90 mb-1">Работно време</span>
                   <span className="text-sm text-white/80">Пон - Пет: 08:00 - 20:00</span>
@@ -150,10 +150,10 @@ const Footer = () => {
               &copy; {currentYear} D&D Construction. Всички права запазени.
             </p>
             <div className="flex items-center space-x-6">
-              <Link href="/privacy-policy" className="text-white/60 hover:text-primary font-sans text-sm transition-colors duration-300">
+              <Link href="/privacy-policy" className="text-white/60 hover:text-warning font-sans text-sm transition-colors duration-300">
                 Поверителност
               </Link>
-              <Link href="/terms-and-conditions" className="text-white/60 hover:text-primary font-sans text-sm transition-colors duration-300">
+              <Link href="/terms-and-conditions" className="text-white/60 hover:text-warning font-sans text-sm transition-colors duration-300">
                 Условия
               </Link>
             </div>
