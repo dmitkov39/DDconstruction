@@ -5,7 +5,7 @@ import MaterialTransportInteractive from './components/MaterialTransportInteract
 const SITE_URL = 'https://www.ddconstructiongp.com';
 
 export const metadata: Metadata = {
-  title: 'Транспорт на материали - D&D Construction',
+  title: 'Транспорт на материали',
   description:
     'Професионални транспортни услуги за строителни материали, земни маси и оборудване. Модерен автопарк, навременна доставка и пълна застраховка на товара.',
   alternates: { canonical: `${SITE_URL}/material-transport-services` },

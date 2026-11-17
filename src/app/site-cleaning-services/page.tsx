@@ -6,7 +6,7 @@ import SiteCleaningInteractive from './components/SiteCleaningInteractive';
 const SITE_URL = 'https://www.ddconstructiongp.com';
 
 export const metadata: Metadata = {
-  title: 'Почистване на строителни обекти - D&D Construction',
+  title: 'Почистване на строителни обекти',
   description:
     'Професионални услуги за почистване на строителни обекти, терени и площадки в София и Софийска област. Екологично управление на отпадъци, собствена техника и гарантирано качество.',
   keywords: [

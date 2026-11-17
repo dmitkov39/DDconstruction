@@ -6,7 +6,7 @@ import LandLevelingInteractive from './components/LandLevelingInteractive';
 const SITE_URL = 'https://www.ddconstructiongp.com';
 
 export const metadata: Metadata = {
-  title: 'Заравняване на терени - D&D Construction',
+  title: 'Заравняване на терени',
   description:
     'Професионално заравняване на терени с фокус върху дренаж и стабилност. Прецизна подготовка на площи с модерна техника и доказани методи за перфектно изравнени терени.',
   keywords: [
