@@ -13,7 +13,7 @@ const HERO_IMAGE = '/assets/images/ozelenyavane-hero.jpg';
 export const metadata: Metadata = {
   title: 'Озеленяване и оформяне на дворове в София',
   description:
-    'Оформяне на дворове и озеленяване в София и Софийска област: терасиране, подпорни стени, дренаж, поливни системи и подготовка за тревна площ. Изкопи и техника от един изпълнител.',
+    'Оформяне на дворове и озеленяване в София и Софийска област: изкопи, терасиране, подпорни стени, дренаж, настилки, засаждане на трева и растения. Един изпълнител и собствена техника.',
   keywords: [
     'озеленяване София',
     'оформяне на двор',
@@ -21,7 +21,8 @@ export const metadata: Metadata = {
     'терасиране на терен',
     'подпорни стени',
     'поливна система двор',
-    'подготовка за тревна площ',
+    'настилки и павета',
+    'засаждане на трева',
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: 'Озеленяване и оформяне на дворове в София',
     description:
-      'От изкопа и заравняването до подпорни стени, дренаж и поливна система – оформяме дворове в София и региона.',
+      'От изкопа до настилки, трева и растения – оформяме дворове в София и региона.',
     locale: 'bg_BG',
     images: [{ url: `${SITE_URL}${HERO_IMAGE}` }],
   },
@@ -38,13 +39,8 @@ export const metadata: Metadata = {
 const services = [
   {
     icon: 'ScaleIcon',
-    title: 'Заравняване и нивелиране на двор',
-    text: 'Изравняваме неравни дворове и парцели с правилни нива и наклони, така че водата да се оттича от къщата, а не към нея.',
-  },
-  {
-    icon: 'Square3Stack3DIcon',
-    title: 'Терасиране на наклонени терени',
-    text: 'Превръщаме стръмен склон в равни площи на нива – за градина, място за сядане, паркинг или за следващо строителство.',
+    title: 'Заравняване и терасиране',
+    text: 'Правим правилни нива и наклони, така че водата да се оттича от къщата. Стръмен склон превръщаме в равни площи на нива.',
   },
   {
     icon: 'CubeIcon',
@@ -59,12 +55,17 @@ const services = [
   {
     icon: 'CloudIcon',
     title: 'Поливни системи',
-    text: 'Полагаме тръбите за автоматична поливна система още при оформянето на терена, преди да се засади или затревява.',
+    text: 'Полагаме тръбите за автоматична поливна система още при оформянето на терена, преди настилките и засаждането.',
+  },
+  {
+    icon: 'Square3Stack3DIcon',
+    title: 'Настилки и пътеки',
+    text: 'Изпълняваме бетонни и павирани настилки, пътеки, площадки за паркиране и за сядане – върху добре подготвена и уплътнена основа.',
   },
   {
     icon: 'SparklesIcon',
-    title: 'Подготовка за тревна площ и насаждения',
-    text: 'Почистваме терена, доставяме и разстиламе земни маси, чакъл и хумус, и го оставяме готов за затревяване и засаждане.',
+    title: 'Засаждане на трева и растения',
+    text: 'Подготвяме почвата, засяваме трева и засаждаме растения. По-сложното озеленяване изпълняваме със специалист, като договорът остава при нас.',
   },
 ];
 
@@ -77,7 +78,7 @@ const reasons = [
   {
     icon: 'ClockIcon',
     title: 'Един изпълнител вместо няколко',
-    text: 'Изкопът, стените, дренажът и почистването минават през един екип. Няма чакане между фирмите и прехвърляне на вината.',
+    text: 'Изкопът, стените, дренажът, настилките и засаждането минават през един изпълнител. Няма чакане между фирмите и прехвърляне на вината.',
   },
   {
     icon: 'ShieldCheckIcon',
@@ -97,18 +98,22 @@ const steps = [
   },
   {
     title: 'Стени, дренаж, поливна система',
-    text: 'Изграждаме подпорните стени, полагаме дренаж и тръби за поливна система.',
+    text: 'Изграждаме подпорните стени, полагаме дренаж, ВиК връзки и тръби за поливна система.',
   },
   {
-    title: 'Завършване и почистване',
-    text: 'Разстиламе земните маси, чакъла и хумуса, извозваме излишното и предаваме чист терен.',
+    title: 'Настилки, засаждане и почистване',
+    text: 'Правим настилките и пътеките, засяваме трева, засаждаме растения, извозваме излишното и предаваме готов и чист двор.',
   },
 ];
 
 const faqs = [
   {
     q: 'Какво е озеленяване и какво включва оформянето на двор?',
-    a: 'Оформянето (още благоустрояване) на двор е цялата работа по терена: заравняване или терасиране, подпорни стени, дренаж, поливна система, пътеки и подготовка за тревна площ и растения. Озеленяването е крайният етап – засаждането на трева, храсти и дървета. При нас ще получите подготвения терен, върху който се озеленява.',
+    a: 'Оформянето (още благоустрояване) на двор е цялата работа по терена: заравняване или терасиране, подпорни стени, дренаж, поливна система, пътеки и подготовка за тревна площ и растения. Озеленяването е крайният етап – засаждането на трева, храсти и дървета. При нас получавате и двете – подготвения терен и самото засаждане на трева и растения.',
+  },
+  {
+    q: 'Правите ли и по-сложно озеленяване?',
+    a: 'Настилките, тревата и растенията изпълняваме ние. За по-сложно озеленяване работим заедно със специалист, но договорът, срокът и отговорността остават при нас – вие си имате един изпълнител.',
   },
   {
     q: 'Работите ли само в София?',
@@ -144,7 +149,7 @@ const jsonLd = {
       },
       areaServed: ['София', 'Софийска област'],
       description:
-        'Оформяне на дворове: заравняване, терасиране, подпорни стени, дренаж, поливни системи и подготовка за тревна площ.',
+        'Оформяне на дворове: заравняване, терасиране, подпорни стени, дренаж, поливни системи, настилки и засаждане на трева и растения.',
     },
     {
       '@type': 'FAQPage',
@@ -169,24 +174,24 @@ export default function LandscapingServicesPage() {
 
       <main className="pt-24">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/5 py-16 lg:py-24">
+        <section className="bg-gradient-to-br from-success/10 via-background to-accent/5 py-16 lg:py-24">
           <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-                <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
+              <div className="inline-flex items-center space-x-2 bg-success/10 px-4 py-2 rounded-full mb-6">
+                <Icon name="CheckBadgeIcon" size={20} className="text-success" variant="solid" />
                 <span className="text-sm font-heading font-semibold text-foreground">
                   Собствена техника и опитен екип
                 </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
-                Озеленяване и <span className="text-primary">оформяне на дворове</span> в София
+                Озеленяване и <span className="text-success">оформяне на дворове</span> в София
               </h1>
 
               <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                Правим целия двор от изкопа до готов терен: заравняване, терасиране,
-                подпорни стени, дренаж и поливна система. Един изпълнител, една
-                отговорност и терен, готов за трева и растения.
+                Правим целия двор от първия изкоп до готов резултат: заравняване,
+                подпорни стени, дренаж, настилки, трева и растения. Един изпълнител
+                и една отговорност.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -199,7 +204,7 @@ export default function LandscapingServicesPage() {
                 </a>
                 <Link
                   href="/quick-quote"
-                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-success text-success-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
                 >
                   <Icon name="DocumentTextIcon" size={20} />
                   <span>Безплатна оферта</span>
@@ -235,8 +240,8 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((s) => (
                 <div key={s.title} className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={s.icon} size={26} className="text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
+                    <Icon name={s.icon} size={26} className="text-success" />
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{s.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{s.text}</p>
@@ -261,8 +266,8 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {reasons.map((r) => (
                 <div key={r.title} className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={r.icon} size={28} className="text-primary" />
+                  <div className="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name={r.icon} size={28} className="text-success" />
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{r.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{r.text}</p>
@@ -282,7 +287,7 @@ export default function LandscapingServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((s, i) => (
                 <div key={s.title} className="relative bg-card border border-border rounded-xl p-6">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading font-bold mb-4">
+                  <div className="w-10 h-10 rounded-full bg-success text-success-foreground flex items-center justify-center font-heading font-bold mb-4">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-heading font-bold mb-2">{s.title}</h3>
@@ -321,11 +326,11 @@ export default function LandscapingServicesPage() {
         {/* CTA */}
         <section className="py-16 lg:py-20">
           <div className="container mx-auto px-4">
-            <div className="bg-primary rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+            <div className="bg-success rounded-2xl p-8 md:p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-success-foreground mb-4">
                 Искате да оформите двора си?
               </h2>
-              <p className="text-primary-foreground text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-success-foreground text-lg mb-8 max-w-2xl mx-auto">
                 Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем какво и как може да се направи.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
