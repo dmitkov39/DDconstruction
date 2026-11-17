@@ -10,42 +10,42 @@
 @layer base {
   :root {
     /* Background Colors */
-    --color-background: #FAF7F2; /* warm off-white */
-    --color-foreground: #1C1A17; /* warm near-black */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #000000; /* black */
     --color-card: #FFFFFF; /* white */
-    --color-card-foreground: #1C1A17; /* warm near-black */
+    --color-card-foreground: #000000; /* black */
     --color-popover: #FFFFFF; /* white */
-    --color-popover-foreground: #1C1A17; /* warm near-black */
+    --color-popover-foreground: #000000; /* black */
     
     /* Border & Input */
-    --color-border: #E6DFD0; /* sand */
-    --color-input: #E6DFD0; /* sand */
-    --color-ring: #2E7D32; /* green-800 */
+    --color-border: #E3F2FD; /* light blue-50 */
+    --color-input: #E3F2FD; /* light blue-50 */
+    --color-ring: #FDD835; /* yellow-600 */
     
     /* Muted */
-    --color-muted: #EFEADF; /* light sand */
-    --color-muted-foreground: #4A4540; /* warm gray */
+    --color-muted: #E3F2FD; /* light blue-50 */
+    --color-muted-foreground: #424242; /* gray-800 */
     
-    /* Primary - Green */
-    --color-primary: #2E7D32; /* green-800 */
+    /* Primary - Construction Blue */
+    --color-primary: #1976D2; /* blue-700 */
     --color-primary-foreground: #FFFFFF; /* white */
     
     /* Secondary - Professional Black */
     --color-secondary: #212121; /* black-900 */
     --color-secondary-foreground: #FFFFFF; /* white */
     
-    /* Accent - Earth Brown */
-    --color-accent: #8D5524; /* earth brown */
-    --color-accent-foreground: #FFFFFF; /* white */
+    /* Accent - Construction Yellow */
+    --color-accent: #FDD835; /* yellow-600 */
+    --color-accent-foreground: #000000; /* black */
     
     /* Destructive/Error */
-    --color-destructive: #C2410C; /* burnt orange */
+    --color-destructive: #D32F2F; /* red-700 */
     --color-destructive-foreground: #FFFFFF; /* white */
-    --color-error: #C2410C; /* burnt orange */
+    --color-error: #D32F2F; /* red-700 */
     --color-error-foreground: #FFFFFF; /* white */
     
     /* Success */
-    --color-success: #1B5E20; /* green-900 */
+    --color-success: #388E3C; /* green-700 */
     --color-success-foreground: #FFFFFF; /* white */
     
     /* Warning */
@@ -53,7 +53,7 @@
     --color-warning-foreground: #000000; /* black */
     
     /* Additional Brand Colors */
-    --color-conversion: #1B5E20; /* green-900 */
+    --color-conversion: #1565C0; /* blue-800 */
     --color-conversion-foreground: #FFFFFF; /* white */
     
     /* Spacing */
@@ -62,7 +62,7 @@
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 25px rgba(46, 125, 50, 0.3);
+    --shadow-lg: 0 8px 25px rgba(25, 118, 210, 0.3);
     
     /* Border Radius */
     --radius-sm: 4px;

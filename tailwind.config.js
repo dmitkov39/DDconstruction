@@ -92,7 +92,7 @@ module.exports = {
       boxShadow: {
         'sm': '0 2px 8px rgba(0, 0, 0, 0.1)',
         'md': '0 4px 16px rgba(0, 0, 0, 0.15)',
-        'lg': '0 8px 25px rgba(46, 125, 50, 0.3)',
+        'lg': '0 8px 25px rgba(25, 118, 210, 0.3)',
         'card': '0 2px 8px rgba(0, 0, 0, 0.1)',
         'card-hover': '0 12px 35px rgba(0, 0, 0, 0.15)',
       },

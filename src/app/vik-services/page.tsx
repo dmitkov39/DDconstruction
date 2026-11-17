@@ -18,7 +18,7 @@ export default function VikServicesPage() {
       <Header />
 
       <main className="pt-24">
-        <section className="bg-muted py-20">
+        <section className="bg-blue-50 py-20">
           <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
@@ -56,7 +56,7 @@ export default function VikServicesPage() {
 
               <div className="flex gap-4">
                 <a href="tel:+359878827128"
-                  className="bg-destructive text-white px-6 py-3 rounded-md font-semibold"
+                  className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
                 >
                   Обадете се сега
                 </a>
