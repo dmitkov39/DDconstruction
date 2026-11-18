@@ -310,10 +310,7 @@ const ContactForm = () => {
                         Работно време
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Пон-Пет: 08:00 - 18:00
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Събота: 09:00 - 14:00
+                        Всеки ден: 07:00 - 20:00
                       </p>
                     </div>
                   </div>

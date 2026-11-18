@@ -110,7 +110,7 @@ export default function Homepage() {
       addressRegion: 'Софийска област',
     },
     priceRange: '$$',
-    openingHours: 'Mo-Sa 08:00-20:00',
+    openingHours: 'Mo-Su 07:00-20:00',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',

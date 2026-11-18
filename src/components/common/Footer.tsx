@@ -135,9 +135,7 @@ const Footer = () => {
                 <Icon name="ClockIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="text-sm font-semibold text-white/90 mb-1">Работно време</span>
-                  <span className="text-sm text-white/80">Пон - Пет: 08:00 - 20:00</span>
-                  <span className="text-sm text-white/80">Събота: 09:00 - 19:00</span>
-                  <span className="text-sm text-white/80">Неделя: 09:00 - 19:00</span>
+                  <span className="text-sm text-white/80">Всеки ден: 07:00 - 20:00</span>
                 </div>
               </li>
             </ul>
