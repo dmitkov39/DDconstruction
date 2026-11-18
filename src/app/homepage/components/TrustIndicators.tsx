@@ -61,10 +61,10 @@ const equipment: Equipment[] = [
 },
 {
   id: 3,
-  name: 'Mercedes Atego 1222',
-  image: "https://img.rocket.new/generatedImages/rocket_gen_img_1c19aca00-1766584863325.png",
-  alt: 'Тристратен самосвал Mercedes Atego 1222 за транспорт на материали',
-  specs: 'Тристратен самосвал, товароносимост 6 тона'
+  name: 'Iveco Daily 35C15',
+  image: "/assets/images/iveco-daily-35c15.jpg",
+  alt: 'Самосвал Iveco Daily 35C15 на D&D Construction за транспорт на земни маси и материали',
+  specs: 'Самосвал за земни маси, инертни материали и строителни отпадъци'
 }];
 
 
