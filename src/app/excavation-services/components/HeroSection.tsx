@@ -20,7 +20,7 @@ const HeroSection = ({ onContactClick, onQuoteClick }: HeroSectionProps) => {
           <div className="space-y-8">
             <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full">
               <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
-              <span className="text-sm font-heading font-semibold text-foreground">Сертифицирани специалисти</span>
+              <span className="text-sm font-heading font-semibold text-foreground">Опитен екип и собствена техника</span>
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
@@ -59,8 +59,8 @@ const HeroSection = ({ onContactClick, onQuoteClick }: HeroSectionProps) => {
                 <div className="text-sm text-muted-foreground mt-1">Проекти</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-heading font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground mt-1">Поддръжка</div>
+                <div className="text-3xl font-heading font-bold text-primary">7 дни</div>
+                <div className="text-sm text-muted-foreground mt-1">в седмицата</div>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 bg-primary/20 px-4 py-2 rounded-full mb-6">
             <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
-            <span className="text-sm font-semibold text-foreground">Сертифицирани специалисти</span>
+            <span className="text-sm font-semibold text-foreground">Опитен екип и собствена техника</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
@@ -46,8 +46,8 @@ const HeroSection = () => {
             <div className="flex items-center justify-center space-x-3 bg-card p-4 rounded-lg shadow-sm">
               <Icon name="ClockIcon" size={24} className="text-primary" />
               <div className="text-left">
-                <p className="text-2xl font-bold text-foreground">24/7</p>
-                <p className="text-sm text-muted-foreground">Наличност</p>
+                <p className="text-2xl font-bold text-foreground">7 дни</p>
+                <p className="text-sm text-muted-foreground">в седмицата</p>
               </div>
             </div>
             

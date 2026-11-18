@@ -121,7 +121,7 @@ const Footer = () => {
                     +359 878 827 128
                   </a>
                   <a href="tel:+359885078098" className="text-destructive hover:text-primary font-sans text-sm transition-colors duration-300 block">
-                    +359 885 078 098 (24/7)
+                    +359 885 078 098
                   </a>
                 </div>
               </li>

@@ -2,13 +2,6 @@ import React from 'react';
 import Icon from '@/components/ui/AppIcon';
 import AppImage from '@/components/ui/AppImage';
 
-interface Certification {
-  id: number;
-  name: string;
-  icon: string;
-  description: string;
-}
-
 interface Equipment {
   id: number;
   name: string;
@@ -16,33 +9,6 @@ interface Equipment {
   alt: string;
   specs: string;
 }
-
-const certifications: Certification[] = [
-{
-  id: 1,
-  name: 'ISO 9001:2015',
-  icon: 'ShieldCheckIcon',
-  description: 'Сертифицирана система за управление на качеството'
-},
-{
-  id: 2,
-  name: 'Застраховка',
-  icon: 'DocumentCheckIcon',
-  description: 'Пълна застрахователна покритие за всички проекти'
-},
-{
-  id: 3,
-  name: 'Безопасност',
-  icon: 'ExclamationTriangleIcon',
-  description: 'Сертификати за безопасност и охрана на труда'
-},
-{
-  id: 4,
-  name: 'ЕС стандарти',
-  icon: 'CheckBadgeIcon',
-  description: 'Съответствие с европейските строителни норми'
-}];
-
 
 const equipment: Equipment[] = [
 {
@@ -85,7 +51,7 @@ const TrustIndicators = () => {
             <span className="text-primary">професионализъм</span>
           </h2>
           <p className="text-lg text-muted-foreground font-sans">
-            Над 5 години опит, модерна техника и сертификати, които гарантират най-високо качество на услугите.
+            Над 5 години опит, собствена техника и един изпълнител, който отговаря за резултата.
           </p>
         </div>
 
@@ -132,10 +98,10 @@ const TrustIndicators = () => {
                 <Icon name="ClockIcon" size={32} className="text-primary" variant="solid" />
               </div>
               <h4 className="text-lg font-heading font-bold text-foreground mb-2">
-                24/7 Наличност
+                На разположение всеки ден
               </h4>
               <p className="text-sm text-muted-foreground font-sans">
-                Винаги на разположение за спешни проекти
+                Работим всеки ден от 07:00 до 20:00
               </p>
             </div>
 
