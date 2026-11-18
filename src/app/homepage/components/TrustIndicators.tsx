@@ -111,7 +111,7 @@ const TrustIndicators = () => {
                   alt={item.alt}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 via-45% to-transparent"></div>
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
