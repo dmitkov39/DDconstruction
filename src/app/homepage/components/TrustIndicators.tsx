@@ -48,8 +48,8 @@ const equipment: Equipment[] = [
 {
   id: 1,
   name: 'Takeuchi TB016',
-  image: "/assets/images/image-1768042974877.png",
-  alt: 'Компактен минибагер Takeuchi TB016 на строителна площадка',
+  image: "/assets/images/takeuchi-tb016-obekt.jpg",
+  alt: 'Минибагер Takeuchi TB016 при изкоп до сграда в строеж',
   specs: 'Минибагер 1.6 тона, идеален за тесни пространства'
 },
 {
