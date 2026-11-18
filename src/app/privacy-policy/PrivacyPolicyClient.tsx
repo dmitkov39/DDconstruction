@@ -229,7 +229,7 @@ const PrivacyPolicyClient = () => {
                       <div>
                         <p className="font-semibold">Телефон:</p>
                         <p className="text-sm">+359 878 827 128</p>
-                        <p className="text-sm text-destructive">+359 885 078 098 (24/7)</p>
+                        <p className="text-sm text-destructive">+359 885 078 098</p>
                       </div>
                     </div>
                   </div>

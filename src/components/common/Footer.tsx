@@ -121,7 +121,7 @@ const Footer = () => {
                     +359 878 827 128
                   </a>
                   <a href="tel:+359885078098" className="text-destructive hover:text-primary font-sans text-sm transition-colors duration-300 block">
-                    +359 885 078 098 (24/7)
+                    +359 885 078 098
                   </a>
                 </div>
               </li>
@@ -135,9 +135,7 @@ const Footer = () => {
                 <Icon name="ClockIcon" size={20} className="text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="text-sm font-semibold text-white/90 mb-1">Работно време</span>
-                  <span className="text-sm text-white/80">Пон - Пет: 08:00 - 20:00</span>
-                  <span className="text-sm text-white/80">Събота: 09:00 - 19:00</span>
-                  <span className="text-sm text-white/80">Неделя: 09:00 - 19:00</span>
+                  <span className="text-sm text-white/80">Всеки ден: 07:00 - 20:00</span>
                 </div>
               </li>
             </ul>

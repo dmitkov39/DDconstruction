@@ -234,7 +234,7 @@ const TermsAndConditionsPage = () => {
               {/* Section 9 */}
               <Section title="9. Използване на техника и оборудване">
                 <p>
-                  <strong>9.1.</strong> Изпълнителят използва модерна и сертифицирана строителна техника.
+                  <strong>9.1.</strong> Изпълнителят използва изправна и редовно поддържана строителна техника.
                 </p>
                 <p>
                   <strong>9.2.</strong> Всички машини се обслужват от квалифицирани оператори.
@@ -269,7 +269,7 @@ const TermsAndConditionsPage = () => {
               {/* Section 11 */}
               <Section title="11. Спешни услуги">
                 <p>
-                  <strong>11.1.</strong> D&D Construction предлага 24/7 спешни услуги на телефон +359 885 078 098.
+                  <strong>11.1.</strong> D&D Construction приема заявки за спешни услуги на телефон +359 885 078 098 всеки ден от 07:00 до 20:00.
                 </p>
                 <p>
                   <strong>11.2.</strong> Спешните услуги включват аварийни изкопи, почистване след бедствия и неотложни ремонти.
@@ -371,7 +371,7 @@ const TermsAndConditionsPage = () => {
                       <div>
                         <p className="font-semibold">Телефон:</p>
                         <p className="text-sm">+359 878 827 128</p>
-                        <p className="text-sm text-destructive">+359 885 078 098 (24/7 Спешни услуги)</p>
+                        <p className="text-sm text-destructive">+359 885 078 098 (спешни услуги)</p>
                       </div>
                     </div>
                   </div>

@@ -60,7 +60,7 @@ const EmergencyContact = () => {
                     Основен телефон
                   </h3>
                   <p className="text-white/80 font-sans text-sm mb-4">
-                    Понеделник - Петък: 08:00 - 18:00
+                    Всеки ден: 07:00 - 20:00
                   </p>
                   <button
                     onClick={handleCallClick}

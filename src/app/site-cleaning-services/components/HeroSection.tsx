@@ -57,7 +57,7 @@ const HeroSection = () => {
               <Icon name="ShieldCheckIcon" size={28} className="text-success flex-shrink-0" />
               <div className="text-left">
                 <p className="text-sm font-heading font-semibold text-foreground">Гарантирано качество</p>
-                <p className="text-xs text-muted-foreground">Сертифицирани</p>
+                <p className="text-xs text-muted-foreground">Отговорност за резултата</p>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 bg-card p-4 rounded-lg shadow-sm">
