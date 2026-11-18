@@ -48,8 +48,8 @@ const equipment: Equipment[] = [
 {
   id: 1,
   name: 'Takeuchi TB016',
-  image: "/assets/images/image-1768042974877.png",
-  alt: 'Компактен минибагер Takeuchi TB016 на строителна площадка',
+  image: "/assets/images/takeuchi-tb016-obekt.jpg",
+  alt: 'Минибагер Takeuchi TB016 при изкоп до сграда в строеж',
   specs: 'Минибагер 1.6 тона, идеален за тесни пространства'
 },
 {
@@ -111,7 +111,7 @@ const TrustIndicators = () => {
                   alt={item.alt}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 via-45% to-transparent"></div>
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
