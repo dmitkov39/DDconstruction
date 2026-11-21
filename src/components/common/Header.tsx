@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
-import AppImage from '@/components/ui/AppImage';
 
 interface HeaderProps {
   className?: string;
@@ -71,23 +70,13 @@ const Header = ({ className = '' }: HeaderProps) => {
             className="flex items-center space-x-3 group"
             onClick={closeMobileMenu}
           >
-            <div className="relative w-16 h-16 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-              <AppImage
-                src="/assets/images/logo-icon.png"
-                alt="D&D Construction – лого"
-                width={64}
-                height={64}
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-heading font-bold text-foreground leading-none">
-                D&D Construction
-              </span>
-              <span className="text-xs font-mono text-muted-foreground mt-0.5">
-                Прецизност в движение
-              </span>
-            </div>
+            <img
+              src="/assets/images/logo-full.png"
+              alt="D&D Construction – изкопни услуги и оформяне на дворове"
+              width={1584}
+              height={514}
+              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">

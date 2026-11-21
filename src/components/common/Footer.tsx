@@ -28,23 +28,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative w-12 h-12 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                <img
-                  src="/assets/images/logo-icon.png"
-                  alt="D&D Construction – лого"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain rounded-lg"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-heading font-bold leading-none">
-                  D&D Construction
-                </span>
-                <span className="text-xs font-mono text-white/60 mt-0.5">
-                  Прецизност в движение
-                </span>
-              </div>
+              <img
+                src="/assets/images/logo-full.png"
+                alt="D&D Construction"
+                width={1584}
+                height={514}
+                className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-white/80 font-sans text-sm leading-relaxed mb-6">
               Цялостно оформяне на дворове в София и региона – от първия изкоп до готов двор. Собствена техника и един изпълнител за всичко.
