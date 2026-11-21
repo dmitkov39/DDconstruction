@@ -52,6 +52,7 @@ export const metadata: Metadata = {
       'Цялостно преобразяване на двора в София и региона – от първия изкоп до готов двор. Един изпълнител, собствена техника.',
     siteName: BRAND_NAME,
     locale: 'bg_BG',
+    images: [{ url: '/assets/images/og-image.png', width: 1200, height: 630, alt: 'D&D Construction' }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -73,8 +73,8 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <AppImage
-                src="/assets/images/image-1767986966482.png"
-                alt="Строителни работници в изкоп с багер по време на изкопни дейности в София"
+                src="/assets/images/hero-dvor.jpg"
+                alt="Минибагер Takeuchi при подготовка и разчистване на частен двор"
                 className="w-full h-[500px] object-cover" />
 
               <div className="absolute inset-0 from-foreground/60 via-transparent to-transparent bg-[rgba(247,151,151,0)]"></div>
