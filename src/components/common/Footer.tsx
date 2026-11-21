@@ -29,40 +29,20 @@ const Footer = () => {
           <div>
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <div className="relative w-12 h-12 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                <svg
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full">
-
-                  <path
-                    d="M8 32L16 24L24 28L32 20L40 24V40H8V32Z"
-                    fill="#FDD835" />
-
-                  <rect x="12" y="36" width="4" height="4" fill="#1976D2" />
-                  <rect x="20" y="34" width="4" height="6" fill="#1976D2" />
-                  <rect x="28" y="32" width="4" height="8" fill="#1976D2" />
-                  <path
-                    d="M4 28L8 24L12 20L16 16L20 12"
-                    stroke="#1565C0"
-                    strokeWidth="2"
-                    strokeLinecap="round" />
-
-                  <circle cx="38" cy="10" r="3" fill="#FDD835" />
-                  <path
-                    d="M36 8L40 12"
-                    stroke="#000000"
-                    strokeWidth="1.5"
-                    strokeLinecap="round" />
-
-                </svg>
+                <img
+                  src="/assets/images/logo-icon.png"
+                  alt="D&D Construction – лого"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-heading font-bold leading-none">
                   D&D Construction
                 </span>
                 <span className="text-xs font-mono text-white/60 mt-0.5">
-                  Precision in Motion
+                  Прецизност в движение
                 </span>
               </div>
             </Link>

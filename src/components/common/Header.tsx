@@ -73,11 +73,11 @@ const Header = ({ className = '' }: HeaderProps) => {
           >
             <div className="relative w-16 h-16 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
               <AppImage
-                src="/assets/images/D_D-1766584629856.png"
-                alt="D&D Construction excavator logo - yellow construction equipment silhouette"
+                src="/assets/images/logo-icon.png"
+                alt="D&D Construction – лого"
                 width={64}
                 height={64}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain rounded-xl"
               />
             </div>
             <div className="flex flex-col">
