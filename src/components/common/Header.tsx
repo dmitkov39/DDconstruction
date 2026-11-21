@@ -71,10 +71,10 @@ const Header = ({ className = '' }: HeaderProps) => {
             onClick={closeMobileMenu}
           >
             <img
-              src="/assets/images/logo-full.png"
+              src="/assets/images/logo-full-light.png"
               alt="D&D Construction – изкопни услуги и оформяне на дворове"
-              width={1584}
-              height={514}
+              width={732}
+              height={197}
               className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
