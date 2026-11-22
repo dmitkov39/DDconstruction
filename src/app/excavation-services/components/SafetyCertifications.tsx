@@ -49,8 +49,8 @@ const safetyFeatures = [
   },
   {
     icon: 'ShieldCheckIcon',
-    title: 'Застраховка',
-    description: 'Пълна застрахователна покритие за всички проекти'
+    title: 'Отговорност',
+    description: 'Отговаряме за качеството на всеки проект'
   },
   {
     icon: 'WrenchScrewdriverIcon',

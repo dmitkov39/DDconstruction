@@ -52,7 +52,7 @@ const CTASection = ({ onContactClick, onQuoteClick }: CTASectionProps) => {
               {
                 icon: 'ShieldCheckIcon',
                 title: 'Гарантирана безопасност',
-                description: 'Пълна застраховка на товара',
+                description: 'Безопасно товарене и транспорт',
               },
               {
                 icon: 'TruckIcon',

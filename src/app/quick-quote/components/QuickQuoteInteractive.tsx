@@ -491,7 +491,7 @@ const QuickQuoteInteractive: React.FC = () => {
                   Гарантирано Качество
                 </h3>
                 <p className="text-sm text-muted-foreground font-sans">
-                  Всички проекти са с гаранция и застраховка за вашето спокойствие
+                  Всички проекти са с гаранция за вашето спокойствие
                 </p>
               </div>
 

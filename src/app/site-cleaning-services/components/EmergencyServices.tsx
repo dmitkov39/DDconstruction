@@ -24,8 +24,8 @@ const EmergencyServices = () => {
     {
       id: 4,
       icon: 'ShieldCheckIcon',
-      title: 'Застраховка',
-      description: 'Пълна застрахователна покритие'
+      title: 'Отговорност',
+      description: 'Отговаряме за резултата от работата'
     }
   ];
 
