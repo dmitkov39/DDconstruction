@@ -9,21 +9,31 @@ interface HeroSectionProps {
 const HeroSection = ({ className = '' }: HeroSectionProps) => {
   return (
     <section
-      className={`relative overflow-hidden bg-[#00101f] text-white pt-32 lg:pt-44 pb-16 lg:pb-24 ${className}`}
+      className={`relative overflow-hidden bg-[#00101f] text-white pt-0 lg:pt-44 pb-12 lg:pb-24 ${className}`}
     >
+      {/* Мобилен вариант: цялата снимка отгоре, текстът под нея */}
       <img
         src="/assets/images/hero-bg.jpg"
         alt="Минибагер Takeuchi TB016 и скид-стий товарач Gehl 4240E на обект"
         width={1800}
         height={1013}
         fetchPriority="high"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="lg:hidden block w-full aspect-[16/10] object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#00101f]/80 via-[#00101f]/60 to-[#00101f]/85"></div>
+      {/* Десктоп: снимката е фон зад текста */}
+      <img
+        src="/assets/images/hero-bg.jpg"
+        alt=""
+        aria-hidden="true"
+        width={1800}
+        height={1013}
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-[#00101f]/80 via-[#00101f]/60 to-[#00101f]/85"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
+      <div className="container mx-auto px-4 relative z-10 pt-8 lg:pt-0">
+        <div className="max-w-4xl mx-auto text-center space-y-6 lg:space-y-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
             Цялостно преобразяване на двора в София{' '}
             <span className="text-[#ffd23f]">– от първия изкоп до готов двор</span>
           </h1>
