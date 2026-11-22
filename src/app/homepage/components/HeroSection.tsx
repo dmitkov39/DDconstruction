@@ -11,32 +11,35 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
     <section
       className={`relative overflow-hidden bg-[#00101f] text-white pt-0 lg:pt-44 pb-12 lg:pb-24 ${className}`}
     >
-      {/* Мобилен вариант: цялата снимка отгоре, текстът под нея */}
-      <img
-        src="/assets/images/hero-bg.jpg"
-        alt="Минибагер Takeuchi TB016 и скид-стий товарач Gehl 4240E на обект"
-        width={1800}
-        height={1013}
-        fetchPriority="high"
-        className="lg:hidden block w-full aspect-[16/10] object-cover"
-      />
       {/* Десктоп: снимката е фон зад текста */}
       <img
         src="/assets/images/hero-bg.jpg"
-        alt=""
-        aria-hidden="true"
+        alt="Минибагер Takeuchi TB016 и скид-стий товарач Gehl 4240E на обект"
+        fetchPriority="high"
         width={1800}
         height={1013}
         className="hidden lg:block absolute inset-0 w-full h-full object-cover"
       />
       <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-[#00101f]/80 via-[#00101f]/60 to-[#00101f]/85"></div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-8 lg:pt-0">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-6 lg:space-y-8">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
-            Цялостно преобразяване на двора в София{' '}
-            <span className="text-[#ffd23f]">– от първия изкоп до готов двор</span>
-          </h1>
+          {/* Мобилен: заглавието е върху леко замъглена снимка; десктоп: снимката е фон на цялата секция */}
+          <div className="relative overflow-hidden -mx-4 px-4 py-14 sm:py-20 lg:m-0 lg:p-0 lg:overflow-visible">
+            <img
+              src="/assets/images/hero-bg.jpg"
+              alt="Минибагер Takeuchi TB016 и скид-стий товарач Gehl 4240E на обект"
+              width={1800}
+              height={1013}
+              fetchPriority="high"
+              className="lg:hidden absolute inset-0 w-full h-full object-cover blur-[2px] scale-105"
+            />
+            <div className="lg:hidden absolute inset-0 bg-[#00101f]/55"></div>
+            <h1 className="relative z-10 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
+              Цялостно преобразяване на двора в София{' '}
+              <span className="text-[#ffd23f]">– от първия изкоп до готов двор</span>
+            </h1>
+          </div>
 
           <p className="text-lg lg:text-xl text-white/90 font-sans leading-relaxed max-w-3xl mx-auto">
             Изкопи, заравняване, подпорни стени, дренаж, ВиК, настилки и засаждане на трева
