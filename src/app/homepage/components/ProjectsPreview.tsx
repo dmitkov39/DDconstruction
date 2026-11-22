@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     image: '/assets/images/gallery/kanali.jpg',
     alt: 'Монтиран отводнителен канал пред жилищна сграда',
-    title: 'Отводнителни канали пред жилищна сграда',
+    title: 'Отводнителни канали',
     location: 'София',
   },
   {
@@ -80,7 +80,7 @@ const ProjectsPreview = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <figcaption className="p-4">
+              <figcaption className="px-4 py-3">
                 <p className="font-heading font-semibold text-foreground">{p.title}</p>
                 {p.location && (
                   <p className="text-sm text-muted-foreground mt-1 flex items-center space-x-1">
