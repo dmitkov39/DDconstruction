@@ -20,7 +20,6 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#00101f]/80 via-[#00101f]/60 to-[#00101f]/85"></div>
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-muted"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">

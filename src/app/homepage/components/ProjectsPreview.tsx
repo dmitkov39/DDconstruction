@@ -49,17 +49,17 @@ const projects: Project[] = [
 
 const ProjectsPreview = () => {
   return (
-    <section className="py-16 lg:py-24 bg-muted">
+    <section className="py-16 lg:py-24 bg-[#00101f]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-            <Icon name="PhotoIcon" size={20} className="text-primary" variant="solid" />
-            <span className="text-sm font-heading font-semibold text-foreground">Наши обекти</span>
+          <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full mb-6">
+            <Icon name="PhotoIcon" size={20} className="text-[#ffd23f]" variant="solid" />
+            <span className="text-sm font-heading font-semibold text-white">Наши обекти</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-foreground mb-6">
-            Реални дворове, <span className="text-primary">реална работа</span>
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-white mb-6">
+            Реални дворове, <span className="text-[#ffd23f]">реална работа</span>
           </h2>
-          <p className="text-lg text-muted-foreground font-sans">
+          <p className="text-lg text-white/75 font-sans">
             Реални обекти от София и региона – снимки от нашата работа.
           </p>
         </div>

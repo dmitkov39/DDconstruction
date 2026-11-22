@@ -96,23 +96,23 @@ const TestimonialsCarousel = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="otzivi" className="py-16 lg:py-24 bg-muted scroll-mt-32">
+    <section id="otzivi" className="py-16 lg:py-24 bg-[#00101f] scroll-mt-32">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-            <Icon name="ChatBubbleLeftRightIcon" size={20} className="text-primary" variant="solid" />
-            <span className="text-sm font-heading font-semibold text-foreground">
+          <div className="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full mb-6">
+            <Icon name="ChatBubbleLeftRightIcon" size={20} className="text-[#ffd23f]" variant="solid" />
+            <span className="text-sm font-heading font-semibold text-white">
               Отзиви от клиенти
             </span>
           </div>
 
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-heading font-bold text-white mb-6">
             Какво казват нашите{' '}
-            <span className="text-primary">клиенти</span>
+            <span className="text-[#ffd23f]">клиенти</span>
           </h2>
 
-          <p className="text-lg text-muted-foreground font-sans">
+          <p className="text-lg text-white/75 font-sans">
            Над 30 успешно завършени проекта и десетки доволни клиенти в София и региона
         </p>
         </div>
@@ -255,7 +255,7 @@ const TestimonialsCarousel = () => {
             href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-sans underline underline-offset-4"
+            className="inline-flex items-center gap-2 text-sm text-white/75 hover:text-white transition-colors font-sans underline underline-offset-4"
           >
             <Icon name="StarIcon" size={14} className="text-yellow-400" variant="solid" />
             Остави отзив в Google
