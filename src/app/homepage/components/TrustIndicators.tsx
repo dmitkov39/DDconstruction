@@ -36,7 +36,7 @@ const equipment: Equipment[] = [
 
 const TrustIndicators = () => {
   return (
-    <section className="py-16 lg:py-24 bg-muted">
+    <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
@@ -55,7 +55,7 @@ const TrustIndicators = () => {
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl p-8 lg:p-12 shadow-lg">
+        <div className="bg-card rounded-2xl p-8 lg:p-12 shadow-lg max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-2xl lg:text-3xl font-heading font-bold text-foreground mb-4">
               Нашата техника
