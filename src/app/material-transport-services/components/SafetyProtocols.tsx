@@ -22,7 +22,7 @@ const SafetyProtocols = ({ protocols }: SafetyProtocolsProps) => {
             <div className="inline-flex items-center space-x-2 bg-success/10 px-4 py-2 rounded-full mb-6">
               <Icon name="ShieldCheckIcon" size={20} className="text-success" />
               <span className="text-sm font-semibold text-foreground">
-                Безопасност и застраховка
+                Безопасност при транспорт
               </span>
             </div>
 
@@ -31,7 +31,7 @@ const SafetyProtocols = ({ protocols }: SafetyProtocolsProps) => {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8">
-              Всички наши превозни средства са напълно застраховани, а екипът ни следва строги протоколи за безопасност при товарене, транспорт и разтоварване.
+              Превозните ни средства са изправни и редовно поддържани, а екипът ни следва строги протоколи за безопасност при товарене, транспорт и разтоварване.
             </p>
 
             <div className="space-y-6">
@@ -91,11 +91,11 @@ const SafetyProtocols = ({ protocols }: SafetyProtocolsProps) => {
                   <div className="flex items-center space-x-3 mb-3">
                     <Icon name="CheckBadgeIcon" size={32} className="text-success" />
                     <h3 className="text-xl font-heading font-bold text-foreground">
-                      100% Застрахован транспорт
+                      Внимателен транспорт
                     </h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Пълна застрахователна покритие на всички превозвани материали и оборудване
+                    Товарим, превозваме и разтоварваме материалите и оборудването внимателно и безопасно
                   </p>
                 </div>
               </div>
