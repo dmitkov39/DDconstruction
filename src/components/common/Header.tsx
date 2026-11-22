@@ -32,7 +32,9 @@ const Header = ({ className = '' }: HeaderProps) => {
   const navigationItems = [
     { name: 'Начало', href: '/' },
     { name: 'Услуги', href: '/excavation-services', hasDropdown: true },
+    { name: 'Как работим', href: '/#kak-rabotim' },
     { name: 'Проекти', href: '/projects-portfolio' },
+    { name: 'Отзиви', href: '/#otzivi' },
     { name: 'За D&D', href: '/about' },
     { name: 'Контакт', href: '/contact' },
   ];
@@ -63,6 +65,24 @@ const Header = ({ className = '' }: HeaderProps) => {
         isScrolled ? 'bg-card shadow-md' : 'bg-card'
       } ${className}`}
     >
+      <div
+        className={`hidden ${isScrolled ? '' : 'lg:block'} bg-[#00101f] text-white/80 text-sm`}
+      >
+        <div className="container mx-auto px-4 flex items-center space-x-6 h-9">
+          <a href="tel:+359878827128" className="flex items-center space-x-2 hover:text-white transition-colors duration-300">
+            <Icon name="PhoneIcon" size={14} />
+            <span>+359 878 827 128</span>
+          </a>
+          <a href="mailto:ddconstruction988@gmail.com" className="flex items-center space-x-2 hover:text-white transition-colors duration-300">
+            <Icon name="EnvelopeIcon" size={14} />
+            <span>ddconstruction988@gmail.com</span>
+          </a>
+          <span className="flex items-center space-x-2">
+            <Icon name="ClockIcon" size={14} />
+            <span>Всеки ден: 07:00 - 20:00</span>
+          </span>
+        </div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link

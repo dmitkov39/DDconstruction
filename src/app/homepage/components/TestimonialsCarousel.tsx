@@ -96,7 +96,7 @@ const TestimonialsCarousel = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section id="otzivi" className="py-16 lg:py-24 bg-background scroll-mt-32">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
-import AppImage from '@/components/ui/AppImage';
 
 interface HeroSectionProps {
   className?: string;
@@ -9,80 +8,65 @@ interface HeroSectionProps {
 
 const HeroSection = ({ className = '' }: HeroSectionProps) => {
   return (
-    <section className={`relative bg-gradient-to-br from-background via-muted to-background overflow-hidden ${className}`}>
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-      </div>
+    <section
+      className={`relative overflow-hidden bg-[#00101f] text-white pt-32 lg:pt-44 pb-16 lg:pb-24 ${className}`}
+    >
+      <img
+        src="/assets/images/hero-bg.jpg"
+        alt="Двор в Ихтиман след изкопи и обратен насип, с минибагер и къщи на заден план"
+        width={1920}
+        height={1081}
+        fetchPriority="high"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#00101f]/80 via-[#00101f]/60 to-[#00101f]/85"></div>
 
-      <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10 border-black">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 -mt-8">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full">
-              <Icon name="CheckBadgeIcon" size={20} className="text-primary" variant="solid" />
-              <span className="text-sm font-heading font-semibold text-foreground">
-                Над 5 години опит и собствена техника
-              </span>
-            </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
+            Цялостно преобразяване на двора в София{' '}
+            <span className="text-[#ffd23f]">– от първия изкоп до готов двор</span>
+          </h1>
 
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-tight">
-              Цялостно преобразяване на двора в София{' '}
-              <span className="text-success">– от първия изкоп до готов двор</span>
-            </h1>
+          <p className="text-lg lg:text-xl text-white/90 font-sans leading-relaxed max-w-3xl mx-auto">
+            Изкопи, заравняване, подпорни стени, дренаж, ВиК, настилки и засаждане на трева
+            и растения – един изпълнител и една отговорност за целия двор.
+          </p>
 
-            <p className="text-lg lg:text-xl text-black-300 font-sans leading-relaxed">
-              Изкопи, заравняване, подпорни стени, дренаж, ВиК, настилки и засаждане на трева
-              и растения – един изпълнител и една отговорност за целия двор.
-              При забавяне по наша вина, всеки допълнителен ден не се заплаща.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+359878827128"
-                className="flex items-center justify-center space-x-3 px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95">
-
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="tel:+359878827128"
+              className="flex flex-col items-center justify-center px-10 py-4 bg-primary text-primary-foreground rounded-xl font-cta shadow-[0_0_30px_rgba(20,184,240,0.45)] hover:bg-opacity-90 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <span className="flex items-center space-x-3 text-xl lg:text-2xl font-bold">
                 <Icon name="PhoneIcon" size={24} variant="solid" />
-                <span>Обадете се сега</span>
-              </a>
-
-              <Link
-                href="/quick-quote"
-                className="flex items-center justify-center space-x-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95">
-
-                <Icon name="DocumentTextIcon" size={24} variant="solid" />
-                <span>Безплатен оглед и оферта</span>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-heading font-bold text-primary">30+</div>
-                <div className="text-sm text-muted-foreground font-sans mt-1">Завършени проекти без забавяне</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-heading font-bold text-secondary">5+</div>
-                <div className="text-sm text-muted-foreground font-sans mt-1">Години опит и работата по реални строителни графици</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-heading font-bold text-success">100%</div>
-                <div className="text-sm text-muted-foreground font-sans mt-1">Удовлетворени и повтарящи се клиенти</div>
-              </div>
-            </div>
+                <span>+359 878 827 128</span>
+              </span>
+              <span className="text-sm opacity-90">Безплатен оглед и оферта</span>
+            </a>
+            <Link
+              href="/quick-quote"
+              className="flex items-center justify-center space-x-3 px-8 py-4 bg-white text-[#00101f] rounded-xl font-cta font-bold text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <Icon name="DocumentTextIcon" size={24} variant="solid" />
+              <span>Заявка за оферта</span>
+            </Link>
           </div>
 
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <AppImage
-                src="/assets/images/hero-dvor.jpg"
-                alt="Минибагер Takeuchi при подготовка и разчистване на частен двор"
-                className="w-full h-[500px] object-cover" />
-
-              <div className="absolute inset-0 from-foreground/60 via-transparent to-transparent bg-[rgba(247,151,151,0)]"></div>
-            </div>
-
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
-          </div>
+          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-8 gap-y-3 pt-4 text-sm lg:text-base text-white/90">
+            <li className="flex items-center justify-center space-x-2">
+              <Icon name="CheckCircleIcon" size={20} className="text-[#ffd23f]" variant="solid" />
+              <span>5.0 в Google · 13 отзива</span>
+            </li>
+            <li className="flex items-center justify-center space-x-2">
+              <Icon name="CheckCircleIcon" size={20} className="text-[#ffd23f]" variant="solid" />
+              <span>Над 5 години опит и собствена техника</span>
+            </li>
+            <li className="flex items-center justify-center space-x-2">
+              <Icon name="CheckCircleIcon" size={20} className="text-[#ffd23f]" variant="solid" />
+              <span>При забавяне по наша вина – без доплащане</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
