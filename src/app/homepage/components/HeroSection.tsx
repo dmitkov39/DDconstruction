@@ -13,9 +13,9 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
     >
       <img
         src="/assets/images/hero-bg.jpg"
-        alt="Двор в Ихтиман след изкопи и обратен насип, с минибагер и къщи на заден план"
-        width={1920}
-        height={1081}
+        alt="Минибагер Takeuchi TB016 и скид-стий товарач Gehl 4240E на обект"
+        width={1800}
+        height={1013}
         fetchPriority="high"
         className="absolute inset-0 w-full h-full object-cover"
       />
