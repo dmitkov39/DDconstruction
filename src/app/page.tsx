@@ -8,6 +8,7 @@ import Header from '@/components/common/Header';
 import HeroSection from '@/app/homepage/components/HeroSection';
 import ClientTypesBanner from '@/app/homepage/components/ClientTypesBanner';
 import ServicesOverview from '@/app/homepage/components/ServicesOverview';
+import ProjectsPreview from '@/app/homepage/components/ProjectsPreview';
 import TrustIndicators from '@/app/homepage/components/TrustIndicators';
 import TestimonialsCarousel from '@/app/homepage/components/TestimonialsCarousel';
 import Footer from '@/app/homepage/components/Footer';
@@ -209,6 +210,7 @@ export default function Homepage() {
         <HeroSection />
         <ClientTypesBanner />
         <ServicesOverview />
+        <ProjectsPreview />
         <TrustIndicators />
         <TestimonialsCarousel />
         <Footer />
