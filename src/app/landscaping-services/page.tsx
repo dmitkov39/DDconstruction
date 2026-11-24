@@ -1,10 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import Script from 'next/script';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import Icon from '@/components/ui/AppIcon';
+import ServicePage, { type ServicePageConfig } from '@/components/services/ServicePage';
 
 const SITE_URL = 'https://www.ddconstructiongp.com';
 const PAGE_URL = `${SITE_URL}/landscaping-services`;
@@ -162,199 +157,61 @@ const jsonLd = {
   ],
 };
 
+const config: ServicePageConfig = {
+  accent: 'success',
+  hero: {
+    title: 'Озеленяване и оформяне на дворове',
+    accent: 'в София',
+    description:
+      'Правим целия двор от първия изкоп до готов резултат: заравняване, подпорни стени, дренаж, настилки, трева и растения. Един изпълнител и една отговорност.',
+    image: HERO_IMAGE,
+    imageAlt: 'Двор с терасирани лехи, подпорни стени от камък и чакълена пътека',
+    badges: ['Собствена техника', 'Един изпълнител за целия двор', 'Безплатен оглед и оферта'],
+  },
+  sections: [
+    {
+      type: 'features',
+      badgeIcon: 'SparklesIcon',
+      badge: 'Какво правим',
+      title: 'Какво правим',
+      accent: 'в двора ви',
+      subtitle: 'Земни работи, конструкции и довършване – всичко от един изпълнител.',
+      items: services.map((s) => ({ icon: s.icon, title: s.title, text: s.text })),
+    },
+    {
+      type: 'features',
+      badgeIcon: 'ShieldCheckIcon',
+      badge: 'Защо ние',
+      title: 'От изкопа до готов двор –',
+      accent: 'при един изпълнител',
+      subtitle: 'Повечето дворове се провалят на границата между фирмите. При нас тази граница не съществува.',
+      items: reasons.map((r) => ({ icon: r.icon, title: r.title, text: r.text })),
+    },
+    {
+      type: 'steps',
+      badgeIcon: 'BriefcaseIcon',
+      badge: 'Как работим',
+      title: 'Как протича',
+      accent: 'работата',
+      items: steps,
+    },
+    {
+      type: 'faq',
+      badgeIcon: 'QuestionMarkCircleIcon',
+      badge: 'Въпроси',
+      title: 'Често задавани',
+      accent: 'въпроси',
+      items: faqs,
+    },
+  ],
+  cta: {
+    title: 'Искате да оформите двора си?',
+    text: 'Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем какво и как може да се направи.',
+  },
+  jsonLdId: 'ld-json-landscaping',
+  jsonLd,
+};
+
 export default function LandscapingServicesPage() {
-  return (
-    <>
-      <Script
-        id="ld-json-landscaping"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Header />
-
-      <main className="pt-24">
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-success/10 via-background to-accent/5 py-16 lg:py-24">
-          <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center space-x-2 bg-success/10 px-4 py-2 rounded-full mb-6">
-                <Icon name="CheckBadgeIcon" size={20} className="text-success" variant="solid" />
-                <span className="text-sm font-heading font-semibold text-foreground">
-                  Собствена техника и опитен екип
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
-                Озеленяване и <span className="text-success">оформяне на дворове</span> в София
-              </h1>
-
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                Правим целия двор от първия изкоп до готов резултат: заравняване,
-                подпорни стени, дренаж, настилки, трева и растения. Един изпълнител
-                и една отговорност.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:+359878827128"
-                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
-                >
-                  <Icon name="PhoneIcon" size={20} variant="solid" />
-                  <span>Обадете се сега</span>
-                </a>
-                <Link
-                  href="/quick-quote"
-                  className="flex items-center justify-center space-x-2 px-8 py-4 bg-success text-success-foreground rounded-lg font-cta font-bold text-base hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
-                >
-                  <Icon name="DocumentTextIcon" size={20} />
-                  <span>Безплатна оферта</span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="relative">
-              <Image
-                src={HERO_IMAGE}
-                alt="Двор с терасирани лехи, подпорни стени от камък, каменни стъпала и чакълена пътека"
-                width={900}
-                height={900}
-                className="rounded-2xl shadow-xl object-cover w-full h-auto"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Services */}
-        <section className="py-16 lg:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Какво правим в двора ви
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Земните и строителните работи, върху които стои всеки добре оформен двор.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((s) => (
-                <div key={s.title} className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                  <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
-                    <Icon name={s.icon} size={26} className="text-success" />
-                  </div>
-                  <h3 className="text-xl font-heading font-bold mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why */}
-        <section className="bg-muted/40 py-16 lg:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                От изкопа до готов двор – при един изпълнител
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Повечето дворове се провалят на границата между фирмите. При нас тази граница не съществува.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {reasons.map((r) => (
-                <div key={r.title} className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={r.icon} size={28} className="text-success" />
-                  </div>
-                  <h3 className="text-xl font-heading font-bold mb-2">{r.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{r.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Process */}
-        <section className="py-16 lg:py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">
-              Как протича работата
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {steps.map((s, i) => (
-                <div key={s.title} className="relative bg-card border border-border rounded-xl p-6">
-                  <div className="w-10 h-10 rounded-full bg-success text-success-foreground flex items-center justify-center font-heading font-bold mb-4">
-                    {i + 1}
-                  </div>
-                  <h3 className="text-lg font-heading font-bold mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{s.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="bg-muted/40 py-16 lg:py-20">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">
-              Често задавани въпроси
-            </h2>
-
-            <div className="space-y-4">
-              {faqs.map((f) => (
-                <details key={f.q} className="group bg-card border border-border rounded-xl p-5">
-                  <summary className="cursor-pointer font-heading font-semibold text-lg flex items-center justify-between list-none">
-                    <span>{f.q}</span>
-                    <Icon
-                      name="ChevronDownIcon"
-                      size={20}
-                      className="flex-shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180"
-                    />
-                  </summary>
-                  <p className="text-muted-foreground leading-relaxed mt-4">{f.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 lg:py-20">
-          <div className="container mx-auto px-4">
-            <div className="bg-success rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-success-foreground mb-4">
-                Искате да оформите двора си?
-              </h2>
-              <p className="text-success-foreground text-lg mb-8 max-w-2xl mx-auto">
-                Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем какво и как може да се направи.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="tel:+359878827128"
-                  className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-destructive text-destructive-foreground rounded-lg font-cta font-bold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-md"
-                >
-                  <Icon name="PhoneIcon" size={24} variant="solid" />
-                  <span>+359 878 827 128</span>
-                </a>
-                <Link
-                  href="/quick-quote"
-                  className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-card text-foreground rounded-lg font-cta font-bold text-lg hover:bg-muted transition-all duration-300 shadow-md"
-                >
-                  <Icon name="DocumentTextIcon" size={24} />
-                  <span>Поискай оферта</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <ServicePage config={config} />;
 }
