@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
-import Header from '@/components/common/Header';
-import LandLevelingInteractive from './components/LandLevelingInteractive';
+import ServicePage, { type ServicePageConfig } from '@/components/services/ServicePage';
 
 const SITE_URL = 'https://www.ddconstructiongp.com';
+const PAGE_URL = `${SITE_URL}/land-leveling-services`;
 
 export const metadata: Metadata = {
   title: 'Заравняване на терени',
   description:
-    'Професионално заравняване на терени с фокус върху дренаж и стабилност. Прецизна подготовка на площи с модерна техника и доказани методи за перфектно изравнени терени.',
+    'Заравняване и нивелиране на дворове и парцели в София и региона – с правилни наклони за отводняване. Минибагер, скид-стий товарач и собствен самосвал.',
   keywords: [
     'заравняване на терени София',
     'нивелиране на двор',
@@ -16,42 +15,174 @@ export const metadata: Metadata = {
     'заравняване парцел Софийска област',
     'вертикална планировка',
   ],
-  alternates: { canonical: `${SITE_URL}/land-leveling-services` },
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     type: 'website',
-    url: `${SITE_URL}/land-leveling-services`,
+    url: PAGE_URL,
     title: 'Заравняване на терени - D&D Construction',
-    description:
-      'Професионално заравняване на терени с фокус върху дренаж и стабилност в София и региона.',
+    description: 'Заравняване и нивелиране на дворове и парцели в София и региона.',
     locale: 'bg_BG',
   },
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Заравняване на терени',
-  name: 'Заравняване и нивелиране на терени',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'D&D Construction',
-    telephone: '+359878827128',
+const faqs = [
+  {
+    q: 'Защо са важни наклоните при заравняването?',
+    a: 'Теренът трябва да е равен, но с лек наклон встрани от къщата, за да се оттича водата. Така не се събира вода до основите и не заблатява двора.',
   },
-  areaServed: ['София', 'Софийска област'],
-  description:
-    'Прецизно заравняване и подготовка на терени с фокус върху дренаж и стабилност, с модерна техника.',
+  {
+    q: 'Може ли да изравните стръмен двор?',
+    a: 'Да. При по-голям наклон терасираме терена на нива и, ако е нужно, изграждаме подпорни стени.',
+  },
+  {
+    q: 'Докарвате ли пръст или инертни материали?',
+    a: 'Да. Доставяме и разстиламе пръст, пясък и чакъл със собствения си самосвал.',
+  },
+  {
+    q: 'Колко струва заравняването?',
+    a: 'Цената зависи от площта, наклона и обема на земните работи. Безплатният оглед ни позволява да ви дадем конкретна цена.',
+  },
+];
+
+const config: ServicePageConfig = {
+  hero: {
+    title: 'Заравняване на терени',
+    accent: '– с правилни наклони за отводняване',
+    description:
+      'Заравняваме и нивелираме дворове и парцели в София и региона. Подготвяме терена за строителство, настилки, трева и градина – с наклони, които отвеждат водата.',
+    image: '/assets/images/zaravnyavane-dvor.jpg',
+    imageAlt: 'Заравнен двор с минибагер до къща с оранжев покрив',
+    badges: ['Над 5 години опит', 'Собствена техника', 'Безплатен оглед и оферта'],
+  },
+  sections: [
+    {
+      type: 'features',
+      badgeIcon: 'ScaleIcon',
+      badge: 'Заравняване',
+      title: 'Какво включва',
+      accent: 'заравняването',
+      subtitle: 'Подготвяме терена така, че следващите работи да вървят гладко.',
+      items: [
+        {
+          icon: 'ScaleIcon',
+          title: 'Заравняване на двор',
+          text: 'Нивелираме двора и му даваме правилни нива и наклони.',
+          bullets: ['Минибагер и скид-стий товарач', 'Равна повърхност'],
+        },
+        {
+          icon: 'ArrowTrendingDownIcon',
+          title: 'Наклони за отводняване',
+          text: 'Водата се оттича от къщата, не се събира и не заблатява двора.',
+          bullets: ['Наклон встрани от основите', 'Отводнителни канали при нужда'],
+        },
+        {
+          icon: 'Square3Stack3DIcon',
+          title: 'Терасиране',
+          text: 'Стръмния склон превръщаме в равни площи на нива.',
+          bullets: ['Нива по терена', 'Подпорни стени при нужда'],
+        },
+        {
+          icon: 'CubeIcon',
+          title: 'Насипи и обратен насип',
+          text: 'Донасяме и разстиламе пръст, пясък и чакъл там, където е нужно.',
+          bullets: ['Собствен самосвал', 'Подготовка за настилки'],
+        },
+        {
+          icon: 'HomeModernIcon',
+          title: 'Подготовка на парцел',
+          text: 'Разчистваме и заравняваме парцела преди строителство.',
+          bullets: ['Премахване на растителност', 'Извозване на отпадъци'],
+        },
+        {
+          icon: 'SparklesIcon',
+          title: 'Подготовка за трева',
+          text: 'Подравняваме и подготвяме почвата за засяване на трева и градина.',
+          bullets: ['Финално подравняване', 'Готово за засаждане'],
+        },
+      ],
+    },
+    {
+      type: 'gallery',
+      badgeIcon: 'PhotoIcon',
+      badge: 'Наши обекти',
+      title: 'Заравнени дворове,',
+      accent: 'реални обекти',
+      items: [
+        {
+          image: '/assets/images/gallery/zaravnyavane.jpg',
+          alt: 'Заравнен двор с минибагер при къща с оранжев покрив',
+          title: 'Заравняване на двор',
+        },
+        {
+          image: '/assets/images/gallery/dvor-novi-han.jpg',
+          alt: 'Скид-стий товарач при заравняване на двор в Нови хан',
+          title: 'Изкоп за кабели и заравняване на двор',
+          location: 'Нови хан',
+        },
+        {
+          image: '/assets/images/gallery/dvor-ihtiman.jpg',
+          alt: 'Минибагер и камион при разчистване на двор в Ихтиман',
+          title: 'Разчистване на двор',
+          location: 'Ихтиман',
+        },
+      ],
+    },
+    {
+      type: 'steps',
+      badgeIcon: 'BriefcaseIcon',
+      badge: 'Как работим',
+      title: 'Как протича',
+      accent: 'работата',
+      items: [
+        { title: 'Оглед и оферта', text: 'Измерваме терена, обсъждаме какво искате и даваме безплатна оферта.' },
+        { title: 'Разчистване', text: 'Премахваме растителност, камъни и отпадъци от терена.' },
+        { title: 'Заравняване', text: 'Нивелираме терена с правилни нива и наклони за отводняване.' },
+        { title: 'Предаване', text: 'Извозваме излишното и предаваме чист и равен терен.' },
+      ],
+    },
+    {
+      type: 'faq',
+      badgeIcon: 'QuestionMarkCircleIcon',
+      badge: 'Въпроси',
+      title: 'Често задавани',
+      accent: 'въпроси',
+      items: faqs,
+    },
+  ],
+  cta: {
+    title: 'Нужно ли ви е заравняване?',
+    text: 'Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем какво е нужно.',
+  },
+  jsonLdId: 'ld-json-land-leveling',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        serviceType: 'Заравняване на терени',
+        name: 'Заравняване и нивелиране на терени',
+        url: PAGE_URL,
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'D&D Construction',
+          telephone: '+359878827128',
+          url: SITE_URL,
+        },
+        areaServed: ['София', 'Софийска област'],
+        description: 'Заравняване и подготовка на терени с правилни наклони за отводняване.',
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      },
+    ],
+  },
 };
 
 export default function LandLevelingServicesPage() {
-  return (
-    <>
-      <Script
-        id="ld-json-land-leveling"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Header />
-      <LandLevelingInteractive />
-    </>
-  );
+  return <ServicePage config={config} />;
 }

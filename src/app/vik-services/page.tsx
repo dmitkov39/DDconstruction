@@ -1,89 +1,172 @@
-import Image from 'next/image';
-import Header from '@/components/common/Header';
-import Footer from '@/app/homepage/components/Footer';
-import Icon from '@/components/ui/AppIcon';
+import type { Metadata } from 'next';
+import ServicePage, { type ServicePageConfig } from '@/components/services/ServicePage';
 
 const SITE_URL = 'https://www.ddconstructiongp.com';
+const PAGE_URL = `${SITE_URL}/vik-services`;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'ВиК услуги София | Водопровод и канализация',
   description:
-    'Изкопни ВиК услуги в София и Софийска област – полагане и ремонт на водопроводни и канализационни връзки, изкопи за отводняване. Собствена техника, бърз и коректен срок.',
-  alternates: { canonical: `${SITE_URL}/vik-services` },
+    'ВиК услуги в София и Софийска област – полагане на тръби, щрангове, водомерни шахти, монтаж на бойлери, тоалетни и санитарни уреди, отстраняване на аварии и всички необходими изкопи.',
+  alternates: { canonical: PAGE_URL },
+};
+
+const faqs = [
+  {
+    q: 'Какво включват вашите ВиК услуги?',
+    a: 'Правим ВиК услуги от А до Я: изкопи и траншеи, полагане на водопроводни и канализационни тръби, щрангове, отстраняване на аварии, септични ями, както и засипване и възстановяване на терена след работа.',
+  },
+  {
+    q: 'Правите ли и самото полагане на тръби, не само изкопите?',
+    a: 'Да. Не само копаем траншеята, а и полагаме тръбите, правим връзките и засипваме. Така имате един изпълнител за цялата работа.',
+  },
+  {
+    q: 'Можете ли да отстраните авария?',
+    a: 'Да. Обадете се и ще се разберем за най-близкия възможен час. Намираме и отстраняваме повредата, след което засипваме и възстановяваме терена.',
+  },
+  {
+    q: 'Правите ли щрангове и водомерни шахти?',
+    a: 'Да. Изграждаме и ремонтираме щрангове и правим водомерни шахти. Подробностите уточняваме на огледа.',
+  },
+  {
+    q: 'Монтирате ли бойлери, тоалетни чинии и други санитарни уреди?',
+    a: 'Да. Поставяме бойлери, тоалетни чинии, мивки, смесители, душ кабини и вани, свързваме перални и съдомиялни и сменяме спирателни кранове и сифони.',
+  },
+  {
+    q: 'Отстранявате ли течове и запушвания?',
+    a: 'Да. Търсим и отстраняваме течове по водопроводната и канализационната мрежа и прочистваме запушвания. Обадете се и ще се разберем за най-близкия възможен час.',
+  },
+  {
+    q: 'Работите ли в тесни дворове?',
+    a: 'Да. Работим с минибагер, който е подходящ за дворове и места с ограничен достъп.',
+  },
+  {
+    q: 'Колко струва ВиК работата?',
+    a: 'Цената зависи от дължината на трасето, дълбочината, вида на почвата и материалите. След безплатния оглед получавате конкретна оферта.',
+  },
+];
+
+const config: ServicePageConfig = {
+  hero: {
+    title: 'ВиК услуги в София',
+    accent: '– от изкопа до готовата връзка',
+    description:
+      'Полагаме тръби, правим щрангове и водомерни шахти, монтираме бойлери, тоалетни и санитарни уреди и отстраняваме аварии. Сами правим и изкопите – един изпълнител за цялата работа.',
+    image: '/assets/images/hero-vik.jpg',
+    imageAlt: 'Изкопана траншея за ВиК връзка покрай стена',
+    badges: ['Изкопи и ВиК от един изпълнител', 'Собствена техника', 'Безплатен оглед и оферта'],
+  },
+  sections: [
+    {
+      type: 'features',
+      badgeIcon: 'WrenchScrewdriverIcon',
+      badge: 'ВиК услуги',
+      title: 'Какво',
+      accent: 'правим',
+      subtitle: 'ВиК монтаж, санитарни уреди, аварии и всички необходими изкопи – при един изпълнител.',
+      items: [
+        {
+          icon: 'WrenchScrewdriverIcon',
+          title: 'Полагане на тръби',
+          text: 'Полагаме водопроводни и канализационни тръби и изпълняваме връзките към мрежата и към къщата.',
+        },
+        {
+          icon: 'BuildingOffice2Icon',
+          title: 'Щрангове',
+          text: 'Изграждаме и ремонтираме щрангове във вашата сграда.',
+        },
+        {
+          icon: 'CubeIcon',
+          title: 'Водомерни шахти',
+          text: 'Изграждаме водомерни шахти и свързваме водомера към мрежата.',
+        },
+        {
+          icon: 'ExclamationTriangleIcon',
+          title: 'Аварии и течове',
+          text: 'Намираме и отстраняваме течове и повреди, прочистваме запушвания и възстановяваме терена след работа.',
+        },
+        {
+          icon: 'HomeModernIcon',
+          title: 'Тоалетни, мивки, вани и душове',
+          text: 'Поставяме тоалетни чинии, мивки, вани и душ кабини и ги свързваме към мрежата.',
+        },
+        {
+          icon: 'FireIcon',
+          title: 'Бойлери',
+          text: 'Монтираме и свързваме бойлери, както и сменяме стари.',
+        },
+        {
+          icon: 'AdjustmentsHorizontalIcon',
+          title: 'Смесители и арматура',
+          text: 'Сменяме смесители, спирателни кранове и сифони и свързваме перални и съдомиялни.',
+        },
+        {
+          icon: 'TruckIcon',
+          title: 'Изкопи и траншеи',
+          text: 'Копаем траншеите със собствен минибагер – и в тесни дворове, а след работа засипваме и заравняваме.',
+        },
+        {
+          icon: 'Square3Stack3DIcon',
+          title: 'Септични ями и отводняване',
+          text: 'Изкопи за септични ями, шахти, дренаж и отводнителни канали.',
+        },
+      ],
+    },
+    {
+      type: 'steps',
+      badgeIcon: 'BriefcaseIcon',
+      badge: 'Как работим',
+      title: 'Как протича',
+      accent: 'работата',
+      items: [
+        { title: 'Оглед и оферта', text: 'Оглеждаме обекта или повредата и ви даваме безплатна оферта.' },
+        { title: 'Изкоп', text: 'Копаем траншеята с минибагер до нужната дълбочина.' },
+        { title: 'ВиК работа', text: 'Полагаме тръбите, монтираме уредите или отстраняваме аварията.' },
+        { title: 'Засипване и почистване', text: 'Засипваме, заравняваме и предаваме чист терен.' },
+      ],
+    },
+    {
+      type: 'faq',
+      badgeIcon: 'QuestionMarkCircleIcon',
+      badge: 'Въпроси',
+      title: 'Често задавани',
+      accent: 'въпроси',
+      items: faqs,
+    },
+  ],
+  cta: {
+    title: 'Нужна ви е ВиК услуга?',
+    text: 'Обадете се или поискайте безплатна оферта. Ще дойдем на оглед и ще ви кажем цена и срок.',
+  },
+  jsonLdId: 'ld-json-vik',
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        serviceType: 'ВиК услуги',
+        name: 'ВиК услуги – тръби, щрангове, шахти, бойлери, санитарни уреди, аварии и изкопи',
+        url: PAGE_URL,
+        provider: {
+          '@type': 'LocalBusiness',
+          name: 'D&D Construction',
+          telephone: '+359878827128',
+          url: SITE_URL,
+        },
+        areaServed: ['София', 'Софийска област'],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      },
+    ],
+  },
 };
 
 export default function VikServicesPage() {
-  return (
-    <>
-      <Header />
-
-      <main className="pt-24">
-        <section className="bg-blue-50 py-20">
-          <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-                <Icon name="CheckBadgeIcon" size={18} className="text-primary" variant="solid" />
-                <span className="text-sm font-heading font-semibold text-foreground">
-                  Собствена техника и опитен екип
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight mb-6">
-                ВиК услуги и <span className="text-primary">изкопи за водопровод и канализация</span>
-              </h1>
-
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-                Изпълняваме изкопни дейности за водопроводни и канализационни връзки в София
-                и Софийска област – траншеи за нови връзки, разкопаване при аварии и ремонт,
-                направа на септични ями и пречиствателни станции,
-                както и заравняване и възстановяване на терена след приключване на работата.
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start space-x-2">
-                  <Icon name="CheckCircleIcon" size={20} className="text-primary mt-0.5 flex-shrink-0" variant="solid" />
-                  <span>Изкопи за нови водопроводни връзки</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <Icon name="CheckCircleIcon" size={20} className="text-primary mt-0.5 flex-shrink-0" variant="solid" />
-                  <span>Изкопи за канализационни връзки и отводняване</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <Icon name="CheckCircleIcon" size={20} className="text-primary mt-0.5 flex-shrink-0" variant="solid" />
-                  <span>Разкопаване при аварии и последващо възстановяване на терена</span>
-                </li>
-              </ul>
-
-              <div className="flex gap-4">
-                <a href="tel:+359878827128"
-                  className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold"
-                >
-                  Обадете се сега
-                </a>
-
-                <a href="/quick-quote"
-                  className="bg-primary text-white px-6 py-3 rounded-md font-semibold"
-                >
-                  Безплатна оферта
-                </a>
-              </div>
-            </div>
-
-            <div className="relative max-w-md mx-auto lg:max-w-none">
-              <Image
-                src="/assets/images/20251201_123557-1766602582373.jpg"
-                alt="Изкопана траншея за ВиК връзка"
-                width={750}
-                height={550}
-                className="rounded-2xl shadow-lg object-cover w-full h-[550px] lg:h-[750px]"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <ServicePage config={config} />;
 }
